@@ -1,0 +1,1 @@
+/usr/bin/cc -O3 -DNDEBUG CMakeFiles/sorting_algorithms.dir/main.c.o -o sorting_algorithms 
