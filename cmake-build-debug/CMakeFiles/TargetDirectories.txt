@@ -1,0 +1,3 @@
+/home/andrea/projects/sorting-algorithms/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/andrea/projects/sorting-algorithms/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/andrea/projects/sorting-algorithms/cmake-build-debug/CMakeFiles/sorting_algorithms.dir

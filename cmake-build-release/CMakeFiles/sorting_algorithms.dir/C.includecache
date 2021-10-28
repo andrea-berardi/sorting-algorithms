@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/andrea/projects/sorting-algorithms/main.c
+stdio.h
+-
+stdlib.h
+-
+time.h
+-
+sortingAlgorithms.h
+/home/andrea/projects/sorting-algorithms/sortingAlgorithms.h
+utils.h
+/home/andrea/projects/sorting-algorithms/utils.h
+
+/home/andrea/projects/sorting-algorithms/sortingAlgorithms.c
+stdlib.h
+-
+sortingAlgorithms.h
+/home/andrea/projects/sorting-algorithms/sortingAlgorithms.h
+
+/home/andrea/projects/sorting-algorithms/sortingAlgorithms.h
+
+/home/andrea/projects/sorting-algorithms/utils.c
+stdbool.h
+-
+utils.h
+/home/andrea/projects/sorting-algorithms/utils.h
+
+/home/andrea/projects/sorting-algorithms/utils.h
+stdlib.h
+-
+stdbool.h
+-
+
