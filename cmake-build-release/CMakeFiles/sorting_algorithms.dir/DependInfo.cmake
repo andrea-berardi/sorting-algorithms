@@ -9,6 +9,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
   "/home/andrea/projects/sorting-algorithms/main.c" "/home/andrea/projects/sorting-algorithms/cmake-build-release/CMakeFiles/sorting_algorithms.dir/main.c.o"
+  "/home/andrea/projects/sorting-algorithms/sortingAlgorithms.c" "/home/andrea/projects/sorting-algorithms/cmake-build-release/CMakeFiles/sorting_algorithms.dir/sortingAlgorithms.c.o"
+  "/home/andrea/projects/sorting-algorithms/utils.c" "/home/andrea/projects/sorting-algorithms/cmake-build-release/CMakeFiles/sorting_algorithms.dir/utils.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

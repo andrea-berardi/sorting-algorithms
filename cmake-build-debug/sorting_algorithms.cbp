@@ -77,6 +77,18 @@
 		<Unit filename="/home/andrea/projects/sorting-algorithms/main.c">
 			<Option target="sorting_algorithms"/>
 		</Unit>
+		<Unit filename="/home/andrea/projects/sorting-algorithms/sortingAlgorithms.c">
+			<Option target="sorting_algorithms"/>
+		</Unit>
+		<Unit filename="/home/andrea/projects/sorting-algorithms/sortingAlgorithms.h">
+			<Option target="sorting_algorithms"/>
+		</Unit>
+		<Unit filename="/home/andrea/projects/sorting-algorithms/utils.c">
+			<Option target="sorting_algorithms"/>
+		</Unit>
+		<Unit filename="/home/andrea/projects/sorting-algorithms/utils.h">
+			<Option target="sorting_algorithms"/>
+		</Unit>
 		<Unit filename="/home/andrea/projects/sorting-algorithms/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
