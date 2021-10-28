@@ -5,3 +5,9 @@ CMakeFiles/sorting_algorithms.dir/main.c.o: \
  ../main.c \
  ../sortingAlgorithms.h \
  ../utils.h
+CMakeFiles/sorting_algorithms.dir/sortingAlgorithms.c.o: \
+ ../sortingAlgorithms.c \
+ ../sortingAlgorithms.h
+CMakeFiles/sorting_algorithms.dir/utils.c.o: \
+ ../utils.c \
+ ../utils.h
