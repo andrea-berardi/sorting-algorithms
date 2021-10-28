@@ -1,10 +1,9 @@
-//
-// Created by andrea on 26/10/21.
-//
-
+// Header guards:
+// patterns of preprocessor directives that protect a header from being included multiple times
 #ifndef SORTING_ALGORITHMS_SORTINGALGORITHMS_H
 #define SORTING_ALGORITHMS_SORTINGALGORITHMS_H
 
-void insertionSort(int *array, size_t length);
+void InsertionSort(int array[], size_t length);
+void MergeSort(int array[], size_t p, int r);
 
 #endif //SORTING_ALGORITHMS_SORTINGALGORITHMS_H

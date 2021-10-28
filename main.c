@@ -14,7 +14,8 @@ double single_experiment(size_t length, size_t max_instances) {
     for (size_t instance = 1; instance <= max_instances; ++instance) {
         int *array = malloc(length * sizeof(int));
         if (array == NULL) {
-            fprintf(stderr, "Error: couldn't allocate array (len: %zu, size: %zu).\n", length, sizeof(int));
+            fprintf(stderr, "Error: couldn't allocate %zu-cells array, size: %zu bytes).\n", length,
+                    length * sizeof(int));
             exit(EXIT_FAILURE);
         }
 
@@ -24,7 +25,7 @@ double single_experiment(size_t length, size_t max_instances) {
         clock_t t_start, t_end;
 
         t_start = clock(); // starting processor time stopwatch
-        insertionSort(array, length); // sorting the array
+        InsertionSort(array, length); // sorting the array
         t_end = clock();
 
         t_tot += t_end - t_start;
