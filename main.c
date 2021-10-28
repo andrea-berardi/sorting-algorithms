@@ -63,10 +63,10 @@ int main(int argc, char *argv[]) {
 
     srand(SEED); // fixed seed in order to get reproducible results
 
-    experiment(fp, 0, 50000, 100, 1000);
+    experiment(fp, 0, 50000, 1, 1000);
 
     if (fclose(fp) == EOF)
-        fprintf(stderr, "Failed to flush buffered data and close file\n");
+        fprintf(stderr, "Failed to flush buffered data on `%s`\n", argv[1]);
 
     return EXIT_SUCCESS;
 }

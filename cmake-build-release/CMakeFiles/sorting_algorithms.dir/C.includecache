@@ -18,19 +18,7 @@ sortingAlgorithms.h
 utils.h
 /home/andrea/projects/sorting-algorithms/utils.h
 
-/home/andrea/projects/sorting-algorithms/sortingAlgorithms.c
-stdlib.h
--
-sortingAlgorithms.h
 /home/andrea/projects/sorting-algorithms/sortingAlgorithms.h
-
-/home/andrea/projects/sorting-algorithms/sortingAlgorithms.h
-
-/home/andrea/projects/sorting-algorithms/utils.c
-stdbool.h
--
-utils.h
-/home/andrea/projects/sorting-algorithms/utils.h
 
 /home/andrea/projects/sorting-algorithms/utils.h
 stdlib.h
