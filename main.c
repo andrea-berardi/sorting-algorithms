@@ -69,5 +69,12 @@ int main(int argc, char *argv[]) {
     if (fclose(fp) == EOF)
         fprintf(stderr, "Failed to flush buffered data on `%s`\n", argv[1]);
 
+    int A[] = {1, 3, 2, 0, 5};
+    print_array(A, 5);
+    is_sorted(A, 5) ? printf("sorted\n") : printf("not sorted\n");
+    MergeSort(A, 1, 4);
+    print_array(A, 5);
+    is_sorted(A, 5) ? printf("sorted\n") : printf("not sorted\n");
+
     return EXIT_SUCCESS;
 }

@@ -44,11 +44,11 @@ void Merge(int array[], size_t p, size_t q, size_t r) {
     for (size_t i = 0; i < n1; ++i) left[i] = array[p + i - 1];
     for (size_t j = 0; j < n2; ++j) right[j] = array[q + j];
 
-    size_t i = 1;
-    size_t j = 1;
-
     left[n1] = INT_MAX;
     right[n2] = INT_MAX;
+
+    size_t i = 0;
+    size_t j = 0;
     for (size_t k = p; k < r; ++k) {
         if (left[i] <= right[j]) {
             array[k] = left[i];

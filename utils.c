@@ -1,4 +1,5 @@
 #include <stdbool.h>
+#include <stdio.h>
 
 #include "utils.h"
 
@@ -10,4 +11,10 @@ bool is_sorted(const int array[], size_t length) {
     }
 
     return true;
+}
+
+// Prints to stdout a given array
+void print_array(const int array[], size_t length) {
+    for (size_t i = 0; i < length; ++i)
+        printf("%s%d%s", i == 0 ? "[" : "", array[i], i < length - 1 ? ", " : "]\n");
 }
