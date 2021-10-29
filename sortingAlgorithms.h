@@ -4,6 +4,6 @@
 #define SORTING_ALGORITHMS_SORTINGALGORITHMS_H
 
 void InsertionSort(int array[], size_t length);
-void MergeSort(int array[], size_t p, int r);
+void MergeSort(int array[], size_t p, size_t r);
 
 #endif //SORTING_ALGORITHMS_SORTINGALGORITHMS_H
