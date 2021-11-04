@@ -65,17 +65,10 @@ int main(int argc, char *argv[]) {
 
     srand(SEED); // fixed seed in order to get reproducible results
 
-    //experiment(fp, 0, 50000, 1, 1000);
+    experiment(fp, 0, 50000, 10, 1000);
 
     if (fclose(fp) == EOF)
         fprintf(stderr, "Failed to flush buffered data on `%s`\n", argv[1]);
-
-    int A[] = {1, 3, 2, 0, 5, 8, 7};
-    print_array(A, 7);
-    is_sorted(A, 7) ? printf("sorted\n") : printf("not sorted\n");
-    MergeSort(A, 0, 7);
-    print_array(A, 7);
-    is_sorted(A, 7) ? printf("sorted\n") : printf("not sorted\n");
 
     return EXIT_SUCCESS;
 }

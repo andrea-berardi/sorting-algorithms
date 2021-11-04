@@ -42,27 +42,27 @@ void Merge(int array[], size_t l, size_t c, size_t r) {
     }
 
     for (size_t i = 0; i < n1; ++i) left[i] = array[l + i];
-    for (size_t j = 0; j < n2; ++j) right[j] = array[c + j];
+    for (size_t j = 0; j < n2; ++j) right[j] = array[(c + 1) + j];
 
     size_t i = 0;
     size_t j = 0;
-    for (size_t k = l; k < r; ++k) {
-        if (i <= n1) {
-            if (j <= n2) {
+    for (size_t k = l; k <= r; k++) {
+        if (i < n1) {
+            if (j < n2) {
                 if (left[i] <= right[j]) {
                     array[k] = left[i];
-                    ++i;
+                    i++;
                 } else {
                     array[k] = right[j];
-                    ++j;
+                    j++;
                 }
             } else {
                 array[k] = left[i];
-                ++i;
+                i++;
             }
         } else {
             array[k] = right[j];
-            ++j;
+            j++;
         }
     }
 }
