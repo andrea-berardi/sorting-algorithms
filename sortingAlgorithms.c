@@ -46,25 +46,30 @@ void Merge(int array[], size_t l, size_t c, size_t r) {
 
     size_t i = 0;
     size_t j = 0;
-    for (size_t k = l; k <= r; k++) {
+    for (size_t k = l; k <= r; ++k) {
         if (i < n1) {
             if (j < n2) {
-                if (left[i] <= right[j]) {
+                if (left[i] < right[j]) {
                     array[k] = left[i];
-                    i++;
+                    ++i;
                 } else {
                     array[k] = right[j];
-                    j++;
+                    ++j;
                 }
             } else {
                 array[k] = left[i];
-                i++;
+                ++i;
             }
         } else {
             array[k] = right[j];
-            j++;
+            ++j;
         }
     }
+
+    free(left);
+    left = NULL;
+    free(right);
+    right = NULL;
 }
 
 // Merge sort
