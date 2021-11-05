@@ -72,7 +72,7 @@ void Merge(int array[], size_t l, size_t c, size_t r) {
     right = NULL;
 }
 
-// Merge sort
+// Merge sort (usage: MergeSort(A, left, right - 1))
 void MergeSort(int array[], size_t l, size_t r) {
     if (l < r) {
         size_t c = (l + r) / 2;
