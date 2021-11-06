@@ -22,7 +22,7 @@ void InsertionSort(int array[], size_t length) {
     }
 }
 
-// Merge
+// Merge procedure
 void Merge(int array[], size_t l, size_t c, size_t r) {
     size_t n1 = c - l + 1;
     size_t n2 = r - c;
