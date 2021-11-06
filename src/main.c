@@ -3,9 +3,8 @@
 #include <time.h>
 #include <stdbool.h>
 
-#include "sortingAlgorithms.h"
-#include "experiments.h"
-#include "utils.h"
+#include "headers/experiments.h"
+#include "headers/utils.h"
 
 const bool DEBUG_MODE = false;
 const unsigned SEED = 10;

@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "utils.h"
-#include "sortingAlgorithms.h"
+#include "../../headers/utils.h"
+#include "../../headers/sortingAlgorithms.h"
 
 // Insertion sort
 void InsertionSort(int array[], size_t length) {

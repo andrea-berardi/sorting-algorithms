@@ -2,9 +2,9 @@
 #include <stdlib.h>
 #include <time.h>
 
-#include "sortingAlgorithms.h"
-#include "experiments.h"
-#include "utils.h"
+#include "../../headers/sortingAlgorithms.h"
+#include "../../headers/experiments.h"
+#include "../../headers/utils.h"
 
 // Experiment n.1 - Insertion Sort
 double single_experiment(size_t length, size_t max_instances, const unsigned DEBUG_MODE) {

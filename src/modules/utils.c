@@ -1,7 +1,7 @@
 #include <stdbool.h>
 #include <stdio.h>
 
-#include "utils.h"
+#include "../../headers/utils.h"
 
 // Check if a given array is sorted (ascending order)
 bool is_sorted(const int array[], size_t length) {
