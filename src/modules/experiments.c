@@ -24,7 +24,7 @@ double experiment_2A(size_t length, size_t max_instances, const unsigned DEBUG_M
         clock_t t_start, t_end;
 
         t_start = clock(); // starting processor time stopwatch
-        MergeSort(array, 0, length); // sorting the array
+        MergeSort(array, 0, length - 1); // sorting the array
         t_end = clock();
 
         t_tot += t_end - t_start;
@@ -44,7 +44,7 @@ double experiment_2A(size_t length, size_t max_instances, const unsigned DEBUG_M
 }
 
 void lab_2A(char file[], size_t min_length, size_t max_length, size_t max_instances, size_t step, const unsigned SEED,
-           const unsigned DEBUG_MODE) {
+            const unsigned DEBUG_MODE) {
     srand(SEED); // Reset seed - a fixed seed ensures reproducible results
 
     FILE *fp = fopen(file, "w+");
@@ -56,6 +56,9 @@ void lab_2A(char file[], size_t min_length, size_t max_length, size_t max_instan
     fprintf(fp, "Dimension: array length (n),Time (clock)\n");
     for (size_t length = min_length; length <= max_length; length += step)
         fprintf(fp, "%zu,%lf\n", length, experiment_2A(length, max_instances, DEBUG_MODE));
+
+    if (fclose(fp) == EOF)
+        fprintf(stderr, "Failed to flush buffered data on `%s`\n", file);
 }
 
 // Experiment n.2B - Hybrid Sort
@@ -111,4 +114,7 @@ void lab_1(char file[], size_t min_length, size_t max_length, size_t max_instanc
     fprintf(fp, "Dimension: array length (n),Time (clock)\n");
     for (size_t length = min_length; length <= max_length; length += step)
         fprintf(fp, "%zu,%lf\n", length, experiment_1(length, max_instances, DEBUG_MODE));
+
+    if (fclose(fp) == EOF)
+        fprintf(stderr, "Failed to flush buffered data on `%s`\n", file);
 }
