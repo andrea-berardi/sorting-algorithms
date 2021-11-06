@@ -4,6 +4,11 @@
 #define SORTING_ALGORITHMS_EXPERIMENTS_H
 
 // Experiment n.1 - Insertion Sort
-void lab_1(FILE *fp, size_t min_length, size_t max_length, size_t max_instances, size_t step, unsigned DEBUG_MODE);
+void lab_1(char file[], size_t min_length, size_t max_length, size_t max_instances, size_t step, unsigned SEED,
+           unsigned DEBUG_MODE);
+
+// Experiment n.2A - Merge Sort
+void lab_2A(char file[], size_t min_length, size_t max_length, size_t max_instances, size_t step, unsigned SEED,
+            unsigned DEBUG_MODE);
 
 #endif //SORTING_ALGORITHMS_EXPERIMENTS_H
