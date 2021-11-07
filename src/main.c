@@ -23,10 +23,10 @@ int main(int argc, char *argv[]) {
      */
 
     // Experiment n.1 - Insertion Sort
-    lab_1("lab_1.txt", 0, 50000, 50, 1000, SEED, DEBUG_MODE);
+    lab_1("../results/lab_1.csv", 1000, 50000, 50, 1000, SEED, DEBUG_MODE);
 
     // Experiment n.2 - Merge Sort and Hybrid Sort
-    lab_2A("lab_2A.txt", 0, 50000, 50, 1000, SEED, DEBUG_MODE);
+    lab_2A("../results/lab_2A.csv", 1000, 50000, 50, 1000, SEED, DEBUG_MODE);
 
     // Experiment n.3 - TODO
 
