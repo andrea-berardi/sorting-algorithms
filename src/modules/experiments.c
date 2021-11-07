@@ -21,6 +21,13 @@ double experiment_2A(size_t length, size_t max_instances, const unsigned DEBUG_M
         for (size_t index = 0; index < length; ++index)
             array[index] = rand() % (int) length; // random value between 0 and `length` (0 <= value < length)
 
+        // If length is 0, and so, just for the first run of the experiment, we will raise it to 1, to avoid
+        // "double free" errors. Why? Because MergeSort() is meant to be called with "lenght - 1" and using 0
+        // as a starting point would make the first MergeSort() call with length equals to -1.
+        // We don't need to restore length to the correct value because it is copied, not passed by reference.
+        // The "real" value is unaffected.
+        if (length == 0) ++length;
+
         clock_t t_start, t_end;
 
         t_start = clock(); // starting processor time stopwatch
