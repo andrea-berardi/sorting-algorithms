@@ -37,7 +37,8 @@ double experiment_2A(size_t length, size_t max_instances, const unsigned DEBUG_M
         t_tot += t_end - t_start;
 
         if (DEBUG_MODE) {
-            if (is_sorted(array, length))
+            // if length is 1, then we've just modified it for the first run, reset it to 0
+            if (is_sorted(array, length == 1 ? --length : length))
                 printf("Array sorted successfully\n");
             else
                 fprintf(stderr, "The array was not sorted correctly.\n");

@@ -25,8 +25,12 @@ int main(int argc, char *argv[]) {
     // Experiment n.1 - Insertion Sort
     lab_1("../results/lab_1.csv", 0, 50000, 50, 1000, SEED, DEBUG_MODE);
 
-    // Experiment n.2 - Merge Sort and Hybrid Sort
+    // Experiment n.2A - Merge Sort
     lab_2A("../results/lab_2A.csv", 0, 50000, 50, 1000, SEED, DEBUG_MODE);
+
+    // Experiment n.2B - Find T (threshold) for Merge Sort and Insertion Sort
+    lab_1("../results/lab_2B-1.csv", 0, 5000, 100, 1, SEED, DEBUG_MODE);
+    lab_2A("../results/lab_2B-2.csv", 0, 5000, 100, 1, SEED, DEBUG_MODE);
 
     // Experiment n.3 - TODO
 
