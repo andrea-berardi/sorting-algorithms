@@ -69,7 +69,9 @@ void lab_2A(char file[], size_t min_length, size_t max_length, size_t max_instan
 }
 
 // Experiment n.2B - Hybrid Sort
-// Experiment n.2B - Hybrid Sort
+void lab_2B(char file[], size_t min_length, size_t max_length, size_t max_instances, size_t step, size_t threshold,
+            const unsigned SEED,
+            const unsigned DEBUG_MODE) {}
 
 // Experiment n.1 - Insertion Sort
 double experiment_1(size_t length, size_t max_instances, const unsigned DEBUG_MODE) {
