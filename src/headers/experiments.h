@@ -12,8 +12,11 @@ void lab_2A(char file[], size_t min_length, size_t max_length, size_t max_instan
             unsigned DEBUG_MODE);
 
 // Experiment n.2B - Hybrid Sort
-void lab_2B(char file[], size_t min_length, size_t max_length, size_t max_instances, size_t step, size_t threshold,
+void lab_2B(char file[], size_t min_length, size_t max_length, size_t max_instances, size_t step, size_t THRESHOLD,
             unsigned SEED,
             unsigned DEBUG_MODE);
 
 #endif //SORTING_ALGORITHMS_EXPERIMENTS_H
+
+// #pragma once
+// an alternative to header guards

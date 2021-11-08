@@ -10,3 +10,6 @@ bool is_sorted(const int array[], size_t length); // Check if a given array is s
 void print_array(const int array[], size_t length); // Prints to stdout a given array
 
 #endif //SORTING_ALGORITHMS_UTILS_H
+
+// #pragma once
+// an alternative to header guards

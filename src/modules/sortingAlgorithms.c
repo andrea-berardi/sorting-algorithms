@@ -83,3 +83,35 @@ void MergeSort(int array[], size_t l, size_t r) {
         Merge(array, l, c, r);
     }
 }
+
+// Adapted Insertion Sort
+void AdaptedInsertionSort(int array[], size_t l, size_t r) {
+    size_t i;
+    int key;
+
+    for (size_t j = l; j < r; ++j) {
+        key = array[j + 1];
+        i = j;
+
+        while (i >= 0 && array[i] > key) {
+            array[i + 1] = array[i];
+            --i;
+        }
+
+        array[i + 1] = key;
+    }
+}
+
+// Hybrid Sort (usage: HybridSort(A, left, right - 1))
+void HybridSort(int array[], size_t l, size_t r, const size_t THRESHOLD) {
+    if (r - l + 1 > THRESHOLD) {
+        size_t c = (l + r) / 2;
+
+        HybridSort(array, l, c, THRESHOLD);
+        HybridSort(array, c + 1, r, THRESHOLD);
+
+        Merge(array, l, c, r);
+    } else {
+        AdaptedInsertionSort(array, l, r);
+    }
+}

@@ -3,9 +3,11 @@
 #include <stdbool.h>
 
 #include "headers/experiments.h"
+#include "headers/sortingAlgorithms.h"
 #include "headers/utils.h"
 
 const bool DEBUG_MODE = false;
+const size_t THRESHOLD = 439;
 const unsigned SEED = 10;
 
 int main(int argc, char *argv[]) {
@@ -23,23 +25,32 @@ int main(int argc, char *argv[]) {
      */
 
     // Experiment n.1 - Insertion Sort
-    lab_1("../results/lab_1.csv", 0, 50000, 50, 1000, SEED, DEBUG_MODE);
+    //lab_1("../results/lab_1.csv", 0, 50000, 50, 1000, SEED, DEBUG_MODE);
 
     // Experiment n.2A - Merge Sort
-    lab_2A("../results/lab_2A.csv", 0, 50000, 50, 1000, SEED, DEBUG_MODE);
+    //lab_2A("../results/lab_2A.csv", 0, 50000, 50, 1000, SEED, DEBUG_MODE);
 
     // Experiment n.2B - Find T (threshold) for Merge Sort and Insertion Sort
-    lab_1("../results/lab_2B-1.csv", 0, 5000, 100, 1, SEED, DEBUG_MODE);
-    lab_2A("../results/lab_2B-2.csv", 0, 5000, 100, 1, SEED, DEBUG_MODE);
+    //lab_1("../results/lab_2B-1.csv", 0, 5000, 100, 1, SEED, DEBUG_MODE);
+    //lab_2A("../results/lab_2B-2.csv", 0, 5000, 100, 1, SEED, DEBUG_MODE);
+    lab_2B("../results/lab_2B.csv", 0, 50000, 50, 1000, THRESHOLD, SEED, DEBUG_MODE);
 
-    // Experiment n.3 - TODO
+    // Experiment n.2 - Insertion Sort, Merge Sort, Hybrid Sort (TODO)
 
-    // Experiment n.4 - TODO
+    // Experiment n.3 - (TODO)
+
+    // Experiment n.4 - (TODO)
 
     /*
     if (fclose(fp) == EOF)
         fprintf(stderr, "Failed to flush buffered data on `%s`\n", argv[1]);
     */
+
+    int A[] = {0, 2, 1, 30, 22, 11, 21, 99, 102, 7, 4, 5};
+    print_array(A, 12);
+    HybridSort(A, 0, 12 - 1, THRESHOLD);
+    is_sorted(A, 12);
+    print_array(A, 12);
 
     return EXIT_SUCCESS;
 }
