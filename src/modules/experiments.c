@@ -75,7 +75,7 @@ double experiment_2(size_t length, size_t max_instances, unsigned algorithm, con
         if (DEBUG_MODE) {
             // if length is 1, then we've just modified it for the first run, reset it to 0
             if (is_sorted(array, length == 1 ? --length : length))
-                printf("Array sorted successfully\n");
+                printf("Array sorted successfully (d: %zu)\n", length);
             else
                 fprintf(stderr, "The array was not sorted correctly.\n"), print_array(array, length);
         }

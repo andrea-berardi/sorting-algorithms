@@ -89,9 +89,9 @@ void AdaptedInsertionSort(int array[], size_t l, size_t r) {
     size_t i;
     int key;
 
-    for (size_t j = l; j <= r; ++j) {
-        key = array[j + 1];
-        i = j;
+    for (size_t j = l + 1; j <= r + 1; ++j) {
+        key = array[j];
+        i = j - 1;
 
         while (i >= 0 && array[i] > key) {
             array[i + 1] = array[i];
@@ -102,9 +102,9 @@ void AdaptedInsertionSort(int array[], size_t l, size_t r) {
     }
 }
 
-// Hybrid Sort (usage: HybridSort(A, left, right - 1))
+// Hybrid Sort (usage: HybridSort(A, left, right - 1, threshold))
 void HybridSort(int array[], size_t l, size_t r, const size_t THRESHOLD) {
-    if (r - l + 1 > THRESHOLD) {
+    if (r - l > THRESHOLD) {
         size_t c = (l + r) / 2;
 
         HybridSort(array, l, c, THRESHOLD);
