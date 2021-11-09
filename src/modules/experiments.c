@@ -41,7 +41,7 @@ double experiment_2A(size_t length, size_t max_instances, const unsigned DEBUG_M
             if (is_sorted(array, length == 1 ? --length : length))
                 printf("Array sorted successfully\n");
             else
-                fprintf(stderr, "The array was not sorted correctly.\n");
+                fprintf(stderr, "The array was not sorted correctly.\n"), print_array(array, length);
         }
 
         free(array); // deallocating the array
@@ -104,7 +104,7 @@ double experiment_2B(size_t length, size_t max_instances, size_t THRESHOLD, cons
             if (is_sorted(array, length == 1 ? --length : length))
                 printf("Array sorted successfully\n");
             else
-                fprintf(stderr, "The array was not sorted correctly.\n");
+                fprintf(stderr, "The array was not sorted correctly.\n"), print_array(array, length);
         }
 
         free(array); // deallocating the array
@@ -114,9 +114,10 @@ double experiment_2B(size_t length, size_t max_instances, size_t THRESHOLD, cons
     return t_tot / (double) max_instances;
 }
 
-void lab_2B(char file[], size_t min_length, size_t max_length, size_t max_instances, size_t step, const size_t THRESHOLD,
-            const unsigned SEED,
-            const unsigned DEBUG_MODE) {
+void
+lab_2B(char file[], size_t min_length, size_t max_length, size_t max_instances, size_t step, const size_t THRESHOLD,
+       const unsigned SEED,
+       const unsigned DEBUG_MODE) {
     srand(SEED); // Reset seed - a fixed seed ensures reproducible results
 
     FILE *fp = fopen(file, "w+");
@@ -160,7 +161,7 @@ double experiment_1(size_t length, size_t max_instances, const unsigned DEBUG_MO
             if (is_sorted(array, length))
                 printf("Array sorted successfully\n");
             else
-                fprintf(stderr, "The array was not sorted correctly.\n");
+                fprintf(stderr, "The array was not sorted correctly.\n"), print_array(array, length);
         }
 
         free(array); // deallocating the array

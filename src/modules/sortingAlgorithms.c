@@ -89,7 +89,7 @@ void AdaptedInsertionSort(int array[], size_t l, size_t r) {
     size_t i;
     int key;
 
-    for (size_t j = l; j < r; ++j) {
+    for (size_t j = l; j <= r; ++j) {
         key = array[j + 1];
         i = j;
 
