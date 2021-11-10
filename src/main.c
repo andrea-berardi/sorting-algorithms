@@ -38,7 +38,7 @@ int main(int argc, char *argv[]) {
     */
 
     // Experiment n.2 - Insertion Sort, Merge Sort, Hybrid Sort
-    lab_2("../results/lab_2.csv", 0, 500000, 100, 1000, THRESHOLD, SEED, DEBUG_MODE);
+    lab_2("../results/lab_2.csv", 0, 1000000, 1, 10000, THRESHOLD, SEED, DEBUG_MODE);
 
     // Experiment n.3 - (TODO)
 
