@@ -106,6 +106,6 @@ void HybridSort(int array[], size_t l, size_t r, const size_t THRESHOLD) {
 
         Merge(array, l, c, r);
     } else {
-        AdaptedInsertionSort(array, l, r + 1);
+        AdaptedInsertionSort(array, l, r + 1); // `r+1` because HybridSort&MergeSort are instantiated with `length-1`
     }
 }
