@@ -84,15 +84,16 @@ void MergeSort(int array[], size_t l, size_t r) {
     }
 }
 
-// Adapted Insertion Sort
-void AdaptedInsertionSort(int array[], size_t l, size_t r) {
+// Adapted Insertion Sort - FIXME
+void AdaptedInsertionSort(int array[], size_t l, size_t r) { // FIXME!!!
     size_t i;
     int key;
 
     for (size_t j = l + 1; j <= r + 1; ++j) {
-        key = array[j];
-        i = j - 1;
-
+        // FIXME!!!
+        key = array[j]; // FIXME!!!
+        i = j - 1; // FIXME!!!
+        // FIXME!!!
         while (i >= 0 && array[i] > key) {
             array[i + 1] = array[i];
             --i;
