@@ -5,8 +5,8 @@
 #include "headers/experiments.h"
 #include "headers/utils.h"
 
-const bool DEBUG_MODE = true;
-const size_t THRESHOLD = 439;
+const bool DEBUG_MODE = false;
+const size_t THRESHOLD = 199;
 const unsigned SEED = 10;
 
 int main(int argc, char *argv[]) {
@@ -38,7 +38,7 @@ int main(int argc, char *argv[]) {
     */
 
     // Experiment n.2 - Insertion Sort, Merge Sort, Hybrid Sort
-    lab_2("../results/lab_2.csv", 0, 1000, 100, 1, THRESHOLD, SEED, DEBUG_MODE);
+    lab_2("../results/lab_2.csv", 0, 50000, 50, 1000, THRESHOLD, SEED, DEBUG_MODE);
 
     // Experiment n.3 - (TODO)
 

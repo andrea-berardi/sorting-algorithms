@@ -6,12 +6,9 @@
 
 // Insertion sort
 void InsertionSort(int array[], size_t length) {
-    size_t i;
-    int key;
-
     for (size_t j = 1; j < length; ++j) {
-        key = array[j];
-        i = j - 1;
+        int key = array[j];
+        size_t i = j - 1;
 
         while (i >= 0 && array[i] > key) {
             array[i + 1] = array[i];
@@ -85,16 +82,12 @@ void MergeSort(int array[], size_t l, size_t r) {
 }
 
 // Adapted Insertion Sort - FIXME
-void AdaptedInsertionSort(int array[], size_t l, size_t r) { // FIXME!!!
-    size_t i;
-    int key;
+void AdaptedInsertionSort(int array[], size_t l, size_t r) {
+    for (size_t j = l + 1; j < r; ++j) {
+        int key = array[j];
+        size_t i = j - 1;
 
-    for (size_t j = l + 1; j <= r + 1; ++j) {
-        // FIXME!!!
-        key = array[j]; // FIXME!!!
-        i = j - 1; // FIXME!!!
-        // FIXME!!!
-        while (i >= 0 && array[i] > key) {
+        while (i >= l && array[i] > key) {
             array[i + 1] = array[i];
             --i;
         }
@@ -113,6 +106,6 @@ void HybridSort(int array[], size_t l, size_t r, const size_t THRESHOLD) {
 
         Merge(array, l, c, r);
     } else {
-        AdaptedInsertionSort(array, l, r);
+        AdaptedInsertionSort(array, l, r + 1);
     }
 }
