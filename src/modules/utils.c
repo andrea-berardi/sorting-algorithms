@@ -3,6 +3,13 @@
 
 #include "../headers/utils.h"
 
+// Swap two integers of an array using pointers
+void swap(int array[], size_t a, size_t b) {
+    int tmp = array[a];
+    array[a] = array[b];
+    array[b] = tmp;
+}
+
 // Check if a given array is sorted (ascending order)
 bool is_sorted(const int array[], size_t length) {
     for (size_t i = 1; i < length; ++i)

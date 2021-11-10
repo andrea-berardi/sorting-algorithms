@@ -6,8 +6,14 @@
 #ifndef SORTING_ALGORITHMS_UTILS_H
 #define SORTING_ALGORITHMS_UTILS_H
 
-bool is_sorted(const int array[], size_t length); // Check if a given array is sorted (ascending order)
-void print_array(const int array[], size_t length); // Prints to stdout a given array
+// Swap two integers of an array
+void swap(int array[], size_t a, size_t b);
+
+// Check if a given array is sorted (ascending order)
+bool is_sorted(const int array[], size_t length);
+
+// Prints to stdout a given array
+void print_array(const int array[], size_t length);
 
 #endif //SORTING_ALGORITHMS_UTILS_H
 

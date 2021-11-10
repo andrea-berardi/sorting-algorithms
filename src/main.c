@@ -38,9 +38,10 @@ int main(int argc, char *argv[]) {
     */
 
     // Experiment n.2 - Insertion Sort, Merge Sort, Hybrid Sort
-    lab_2("../results/lab_2.csv", 0, 50000, 50, 1000, THRESHOLD, SEED, DEBUG_MODE);
+    //lab_2("../results/lab_2.csv", 0, 50000, 50, 1000, THRESHOLD, SEED, DEBUG_MODE);
 
-    // Experiment n.3 - (TODO)
+    // Experiment n.3 - Median of Three Quick Sort
+    lab_3("../results/lab_3.csv", 0, 50000, 50, 1000, THRESHOLD, SEED, DEBUG_MODE);
 
     // Experiment n.4 - (TODO)
 
