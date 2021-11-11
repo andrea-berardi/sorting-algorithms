@@ -30,6 +30,14 @@ double experiment_3(ssize_t length, size_t max_instances, unsigned algorithm, co
         for (size_t index = 0; index < length; ++index)
             array[index] = rand() % (int) length; // random value between 0 and `length` (0 <= value < length)
 
+        // If length is 0 and the algorithm is NOT Insertion Sort, and so, just for the first run of the experiment,
+        // we will raise it to 1, to avoid "double free" errors. Why? Because MergeSort() is meant to be called
+        // with "length - 1" and using 0 as a starting point would make the first MergeSort() or HybridSort() call
+        // with length equals to -1.
+        // We don't need to restore length to the correct value because it is copied, not passed by reference.
+        // The "real" value is unaffected.
+        if (length == 0 && algorithm != IS) ++length;
+
         clock_t t_start, t_end;
 
         switch (algorithm) {
@@ -83,7 +91,8 @@ double experiment_3(ssize_t length, size_t max_instances, unsigned algorithm, co
         t_tot += t_end - t_start;
 
         if (DEBUG_MODE) {
-            if (is_sorted(array, length))
+            // if length is 1, then we've just modified it for the first run, reset it to 0
+            if (is_sorted(array, length == 1 ? --length : length))
                 printf("Array sorted successfully (d: %zu)\n", length);
             else
                 fprintf(stderr, "The array was not sorted correctly.\n"), print_array(array, length);
@@ -97,8 +106,8 @@ double experiment_3(ssize_t length, size_t max_instances, unsigned algorithm, co
 }
 
 void lab_3(char file[], ssize_t min_length, ssize_t max_length, size_t max_instances, ssize_t step, const size_t THRESHOLD,
-           const unsigned SEED,
-           const unsigned DEBUG_MODE) {
+      const unsigned SEED,
+      const unsigned DEBUG_MODE) {
     unsigned seed = SEED; // 'cause SEED is a constant
 
     FILE *fp = fopen(file, "w+");
@@ -124,7 +133,8 @@ void lab_3(char file[], ssize_t min_length, ssize_t max_length, size_t max_insta
         srand(seed);
         double time_MTQS = experiment_3(length, max_instances, MTQS, THRESHOLD, DEBUG_MODE);
 
-        fprintf(fp, "%zu,%lf,%lf,%lf,%lf,%lf\n", length, time_IS, time_MS, time_HS, time_QS, time_MTQS); // write to file
+        fprintf(fp, "%zu,%lf,%lf,%lf,%lf,%lf\n", length, time_IS, time_MS, time_HS, time_QS,
+                time_MTQS); // write to file
 
         ++seed;
     }

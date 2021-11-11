@@ -41,7 +41,7 @@ int main(int argc, char *argv[]) {
     //lab_2("../results/lab_2.csv", 1, 50000, 50, 1000, THRESHOLD, SEED, DEBUG_MODE);
 
     // Experiment n.3 - Median of Three Quick Sort
-    lab_3("../results/lab_3.csv", 1, 1000, 100, 1, THRESHOLD, SEED, DEBUG_MODE);
+    lab_3("../results/lab_3.csv", 0, 50000, 100, 1000, THRESHOLD, SEED, DEBUG_MODE);
 
     // Experiment n.4 - (TODO)
 
