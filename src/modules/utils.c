@@ -4,10 +4,10 @@
 #include "../headers/utils.h"
 
 // Swap two integers of an array using pointers
-void swap(int array[], size_t a, size_t b) {
-    int tmp = array[a];
-    array[a] = array[b];
-    array[b] = tmp;
+void swap(int *a, int *b) {
+    int tmp = *a;
+    *a = *b;
+    *b = tmp;
 }
 
 // Check if a given array is sorted (ascending order)

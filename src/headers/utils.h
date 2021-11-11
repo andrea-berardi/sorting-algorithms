@@ -7,7 +7,7 @@
 #define SORTING_ALGORITHMS_UTILS_H
 
 // Swap two integers of an array
-void swap(int array[], size_t a, size_t b);
+void swap(int *a, int *b);
 
 // Check if a given array is sorted (ascending order)
 bool is_sorted(const int array[], size_t length);

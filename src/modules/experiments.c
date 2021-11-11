@@ -30,14 +30,6 @@ double experiment_3(size_t length, size_t max_instances, unsigned algorithm, con
         for (size_t index = 0; index < length; ++index)
             array[index] = rand() % (int) length; // random value between 0 and `length` (0 <= value < length)
 
-        // If length is 0 and the algorithm is NOT Insertion Sort, and so, just for the first run of the experiment,
-        // we will raise it to 1, to avoid "double free" errors. Why? Because MergeSort() is meant to be called
-        // with "length - 1" and using 0 as a starting point would make the first MergeSort() or HybridSort() call
-        // with length equals to -1.
-        // We don't need to restore length to the correct value because it is copied, not passed by reference.
-        // The "real" value is unaffected.
-        if (length == 0 && algorithm != IS) ++length;
-
         clock_t t_start, t_end;
 
         switch (algorithm) {
@@ -65,6 +57,22 @@ double experiment_3(size_t length, size_t max_instances, unsigned algorithm, con
                 break;
             }
 
+            case QS: {
+                t_start = clock(); // starting processor time stopwatch
+                QuickSort(array, 0, length - 1); // sorting the array
+                t_end = clock();
+
+                break;
+            }
+
+            case MTQS: {
+                t_start = clock(); // starting processor time stopwatch
+                MedianOfThreeQuickSort(array, 0, length - 1); // sorting the array
+                t_end = clock();
+
+                break;
+            }
+
             default: {
                 fprintf(stderr, "Unknown algorithm `%d`\n", algorithm);
 
@@ -75,8 +83,7 @@ double experiment_3(size_t length, size_t max_instances, unsigned algorithm, con
         t_tot += t_end - t_start;
 
         if (DEBUG_MODE) {
-            // if length is 1, then we've just modified it for the first run, reset it to 0
-            if (is_sorted(array, length == 1 ? --length : length))
+            if (is_sorted(array, length))
                 printf("Array sorted successfully (d: %zu)\n", length);
             else
                 fprintf(stderr, "The array was not sorted correctly.\n"), print_array(array, length);

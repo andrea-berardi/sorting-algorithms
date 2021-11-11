@@ -118,11 +118,11 @@ size_t Partition(int array[], size_t l, size_t r) {
     for (size_t j = l; j < r; ++j) {
         if (array[j] <= x) {
             ++i;
-            swap(array, i, j);
+            swap(&array[i], &array[j]);
         }
     }
 
-    swap(array, i + 1, r);
+    swap(&array[i + 1], &array[r]);
 
     return i + 1;
 }
@@ -158,17 +158,17 @@ size_t MedianOfThree(const int array[], size_t i, size_t j, size_t k) {
 // Median of Three Partition
 size_t MedianOfThreePartition(int array[], size_t l, size_t r) {
     size_t s = MedianOfThree(array, l, r, (l + r) / 2);
-    swap(array, s, r);
+    swap(&array[s], &array[r]);
     int x = array[r];
     size_t i = l - 1;
 
     for (size_t j = l; j < r; ++j) {
         if (array[j] <= x) {
             ++i;
-            swap(array, i, j);
+            swap(&array[i], &array[j]);
         }
 
-        swap(array, i + 1, r);
+        swap(&array[i + 1], &array[r]);
     }
 
     return i + 1;

@@ -5,7 +5,7 @@
 #include "headers/experiments.h"
 #include "headers/utils.h"
 
-const bool DEBUG_MODE = false;
+const bool DEBUG_MODE = true;
 const size_t THRESHOLD = 199;
 const unsigned SEED = 10;
 
@@ -28,20 +28,20 @@ int main(int argc, char *argv[]) {
     // Additional scope for testing purposes
     {
         // Experiment n.2A - Merge Sort
-        lab_2A("../results/lab_2A.csv", 0, 50000, 50, 1000, SEED, DEBUG_MODE);
+        lab_2A("../results/lab_2A.csv", 1, 50000, 50, 1000, SEED, DEBUG_MODE);
 
         // Experiment n.2B - Find T (threshold) for Merge Sort and Insertion Sort
-        lab_1("../results/lab_2B-1.csv", 0, 5000, 100, 1, SEED, DEBUG_MODE); // finding the threshold
-        lab_2A("../results/lab_2B-2.csv", 0, 5000, 100, 1, SEED, DEBUG_MODE); // finding the threshold
-        lab_2B("../results/lab_2B.csv", 0, 50000, 50, 1000, THRESHOLD, SEED, DEBUG_MODE);
+        lab_1("../results/lab_2B-1.csv", 1, 5000, 100, 1, SEED, DEBUG_MODE); // finding the threshold
+        lab_2A("../results/lab_2B-2.csv", 1, 5000, 100, 1, SEED, DEBUG_MODE); // finding the threshold
+        lab_2B("../results/lab_2B.csv", 1, 50000, 50, 1000, THRESHOLD, SEED, DEBUG_MODE);
     }
     */
 
     // Experiment n.2 - Insertion Sort, Merge Sort, Hybrid Sort
-    //lab_2("../results/lab_2.csv", 0, 50000, 50, 1000, THRESHOLD, SEED, DEBUG_MODE);
+    //lab_2("../results/lab_2.csv", 1, 50000, 50, 1000, THRESHOLD, SEED, DEBUG_MODE);
 
     // Experiment n.3 - Median of Three Quick Sort
-    lab_3("../results/lab_3.csv", 0, 50000, 50, 1000, THRESHOLD, SEED, DEBUG_MODE);
+    lab_3("../results/lab_3.csv", 1, 1000, 100, 1, THRESHOLD, SEED, DEBUG_MODE);
 
     // Experiment n.4 - (TODO)
 
