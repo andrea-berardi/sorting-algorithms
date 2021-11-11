@@ -22,7 +22,7 @@ void lab_2(char file[], size_t min_length, size_t max_length, size_t max_instanc
            unsigned DEBUG_MODE);
 
 // Experiment n.3 - (Insertion Sort, Merge Sort, Hybrid Sort) Quick Sort, Median of Three Quick Sort
-void lab_3(char file[], size_t min_length, size_t max_length, size_t max_instances, size_t step, size_t THRESHOLD,
+void lab_3(char file[], ssize_t min_length, ssize_t max_length, size_t max_instances, ssize_t step, size_t THRESHOLD,
            unsigned SEED,
            unsigned DEBUG_MODE);
 

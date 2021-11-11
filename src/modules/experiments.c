@@ -15,7 +15,7 @@ enum algorithm {
 };
 
 // Experiment n.3 - (Insertion Sort, Merge Sort, Hybrid Sort) Quick Sort, Median of Three Quick Sort
-double experiment_3(size_t length, size_t max_instances, unsigned algorithm, const size_t THRESHOLD,
+double experiment_3(ssize_t length, size_t max_instances, unsigned algorithm, const size_t THRESHOLD,
                     const unsigned DEBUG_MODE) {
     clock_t t_tot = 0;
 
@@ -96,7 +96,7 @@ double experiment_3(size_t length, size_t max_instances, unsigned algorithm, con
     return t_tot / (double) max_instances;
 }
 
-void lab_3(char file[], size_t min_length, size_t max_length, size_t max_instances, size_t step, const size_t THRESHOLD,
+void lab_3(char file[], ssize_t min_length, ssize_t max_length, size_t max_instances, ssize_t step, const size_t THRESHOLD,
            const unsigned SEED,
            const unsigned DEBUG_MODE) {
     unsigned seed = SEED; // 'cause SEED is a constant
@@ -108,7 +108,7 @@ void lab_3(char file[], size_t min_length, size_t max_length, size_t max_instanc
     }
 
     fprintf(fp, "Dimension (n),Insertion Sort,Merge Sort,Hybrid Sort,Quick Sort,Median of Three Quick Sort\n");
-    for (size_t length = min_length; length <= max_length; length += step) {
+    for (ssize_t length = min_length; length <= max_length; length += step) {
         srand(seed);
         double time_IS = experiment_3(length, max_instances, IS, THRESHOLD, DEBUG_MODE);
 

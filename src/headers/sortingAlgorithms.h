@@ -9,9 +9,9 @@ void MergeSort(int array[], size_t l, size_t r);
 
 void HybridSort(int array[], size_t l, size_t r, size_t THRESHOLD);
 
-void QuickSort(int array[], size_t l, size_t r);
+void QuickSort(int array[], ssize_t l, ssize_t r);
 
-void MedianOfThreeQuickSort(int array[], size_t l, size_t r);
+void MedianOfThreeQuickSort(int array[], ssize_t l, ssize_t r);
 
 #endif //SORTING_ALGORITHMS_SORTINGALGORITHMS_H
 
