@@ -5,7 +5,7 @@
 #include "headers/experiments.h"
 #include "headers/utils.h"
 
-const bool DEBUG_MODE = true;
+const bool DEBUG_MODE = false;
 const size_t THRESHOLD = 199;
 const unsigned SEED = 10;
 

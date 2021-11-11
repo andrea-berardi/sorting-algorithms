@@ -139,26 +139,21 @@ void QuickSort(int array[], ssize_t l, ssize_t r) {
 
 // Median of Three: Hardcoded procedure to find the median of three array values
 ssize_t MedianOfThree(const int array[], ssize_t i, ssize_t j, ssize_t k) {
-    if (array[i] > array[j])
-        if (array[j] >= array[k])
-            return j;
-        else if (array[i] < array[k])
-            return i;
-        else
-            return k;
-    else
-        if (array[i] >= array[k])
-            return i;
-        else if (array[j] < array[k])
-            return j;
-        else
-            return k;
+    // ^ is the bitwise XOR operator
+    if ((array[i] > array[j]) ^ (array[i] > array[k])) {
+        return i;
+    } else if ((array[j] < i) ^ (array[j] < array[k])) {
+        return j;
+    } else {
+        return k;
+    }
 }
 
 // Median of Three Partition
 ssize_t MedianOfThreePartition(int array[], ssize_t l, ssize_t r) {
     ssize_t s = MedianOfThree(array, l, r, (l + r) / 2);
     swap(&array[s], &array[r]);
+
     int x = array[r];
     ssize_t i = l - 1;
 
@@ -167,9 +162,9 @@ ssize_t MedianOfThreePartition(int array[], ssize_t l, ssize_t r) {
             ++i;
             swap(&array[i], &array[j]);
         }
-
-        swap(&array[i + 1], &array[r]);
     }
+
+    swap(&array[i + 1], &array[r]);
 
     return i + 1;
 }
@@ -178,67 +173,8 @@ ssize_t MedianOfThreePartition(int array[], ssize_t l, ssize_t r) {
 void MedianOfThreeQuickSort(int array[], ssize_t l, ssize_t r) {
     if (l < r) {
         ssize_t q = MedianOfThreePartition(array, l, r);
+
         MedianOfThreeQuickSort(array, l, q - 1);
         MedianOfThreeQuickSort(array, q + 1, r);
     }
 }
-
-/*
- * #include <stdio.h>
-
-size_t partition(int *array, ssize_t lo, ssize_t hi)
-{
-	ssize_t i, j;
-	int swap, pivot;
-
-	pivot = array[hi];
-	i = lo - 1;
-	for (j = lo; j < hi; j++)
-	{
-		if (array[j] < pivot)
-		{
-			i++;
-			if (i != j)
-			{
-				swap = array[i];
-				array[i] = array[j];
-				array[j] = swap;
-			}
-		}
-	}
-	if (array[hi] < array[i + 1])
-	{
-		swap = array[i + 1];
-		array[i + 1] = array[hi];
-		array[hi] = swap;
-	}
-	return (i + 1);
-}
-
-void quicksort(int *array, ssize_t lo, ssize_t hi)
-{
-    ssize_t pivot;
-
-    if (lo < hi)
-    {
-        pivot = partition(array, lo, hi);
-        quicksort(array, lo, pivot - 1);
-        quicksort(array, pivot + 1, hi);
-
-    }
-}
-
-void quick_sort(int *array, size_t size)
-{
-    if (array == NULL || size < 2)
-        return;
-    quicksort(array, 0, size - 1);
-}
-
-int main(void) {
-    int A[] = {10,9,8,7,6,5,4,3,2,1,0};
-    quick_sort(A, 11);
-
-    for (size_t i = 0; i < 11; ++i)
-        printf("%d, ", A[i]);
-}*/
