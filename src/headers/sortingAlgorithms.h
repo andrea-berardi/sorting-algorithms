@@ -27,6 +27,8 @@ void MedianOfThreeQuickSort(int array[], ssize_t l, ssize_t r);
 
 void TailQuickSort(int array[], ssize_t l, ssize_t r);
 
+void HeapSort(int array[], size_t length);
+
 #endif //SORTING_ALGORITHMS_SORTINGALGORITHMS_H
 
 // #pragma once

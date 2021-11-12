@@ -74,8 +74,17 @@ double experiment_4(ssize_t length, size_t max_instances, unsigned algorithm, co
             }
 
             case TQS: {
-                t_start = clock();
+                t_start = clock(); // starting processor time stopwatch
                 TailQuickSort(array, 0, length - 1); // sorting the array
+                t_end = clock();
+
+                break;
+            }
+
+            case HPS: {
+                t_start = clock(); // starting processor time stopwatch
+                HeapSort(array, length); // sorting the array
+                //HybridSort(array, 0, length - 1, THRESHOLD);
                 t_end = clock();
 
                 break;
@@ -116,7 +125,7 @@ void lab_4(char file[], ssize_t min_length, ssize_t max_length, size_t max_insta
         exit(EXIT_FAILURE);
     }
 
-    fprintf(fp, "Dimension (n),Insertion Sort,Merge Sort,Hybrid Sort,Quick Sort,Median of Three Quick Sort,Tail Recursive Quick Sort\n");
+    fprintf(fp, "Dimension (n),Insertion Sort,Merge Sort,Hybrid Sort,Quick Sort,Median of Three Quick Sort,Tail Recursive Quick Sort,Heap Sort\n");
     for (ssize_t length = min_length; length <= max_length; length += step) {
         srand(seed);
         double time_IS = experiment_4(length, max_instances, IS, THRESHOLD, DEBUG_MODE);
@@ -136,8 +145,11 @@ void lab_4(char file[], ssize_t min_length, ssize_t max_length, size_t max_insta
         srand(seed);
         double time_TQS = experiment_4(length, max_instances, TQS, THRESHOLD, DEBUG_MODE);
 
-        fprintf(fp, "%zu,%lf,%lf,%lf,%lf,%lf\n", length, time_IS, time_MS, time_HS, time_QS,
-                time_MTQS); // write to file
+        srand(seed);
+        double time_HPS = experiment_4(length, max_instances, HPS, THRESHOLD, DEBUG_MODE);
+
+        fprintf(fp, "%zu,%lf,%lf,%lf,%lf,%lf,%lf,%lf\n", length, time_IS, time_MS, time_HS, time_QS,
+                time_MTQS, time_TQS, time_HPS); // write to file
 
         ++seed;
     }

@@ -81,7 +81,7 @@ void MergeSort(int array[], size_t l, size_t r) {
     }
 }
 
-// Adapted Insertion Sort - FIXME
+// Adapted Insertion Sort
 void AdaptedInsertionSort(int array[], size_t l, size_t r) {
     for (size_t j = l + 1; j < r; ++j) {
         int key = array[j];
@@ -189,3 +189,116 @@ void TailQuickSort(int array[], ssize_t l, ssize_t r) {
         l = q + 1;
     }
 }
+
+// Heap - Parent
+size_t Parent(i) {
+    return i / 2;
+}
+
+// Heap - Left branch
+size_t Left(size_t i) {
+    return 2 * i;
+}
+
+// Heap - Right branch
+size_t Right(size_t i) {
+    return 2 * i + 1;
+}
+
+// Heap - Max-Heapify
+void MaxHeapify(int array[], size_t i, size_t HeapSize, size_t length) {
+    size_t l = Left(i);
+    size_t r = Right(i);
+
+    size_t largest;
+
+    if (l <= HeapSize && array[l] > array[i]) {
+        largest = l;
+    } else {
+        largest = i;
+    }
+
+    if (r >= HeapSize && array[r] > largest) {
+        largest = r;
+    }
+
+    if (largest != i) {
+        swap(&array[i], &array[largest]);
+
+        MaxHeapify(array, largest, HeapSize, length);
+    }
+}
+
+// Heap - Build-Max-Heap
+void BuildMaxHeap(int array[], size_t length) {
+    for (size_t i = ((length - 1) - 1) / 2; i >= 0; --i) {
+        MaxHeapify(array, i, length - 1, length);
+    }
+}
+
+// HeapSort
+void HeapSort(int array[], size_t length) {
+    size_t HeapSize = length - 1;
+    BuildMaxHeap(array, length);
+
+    for (size_t i = length; i > 0; --i) {
+        swap(&array[0], &array[i]);
+        --HeapSize;
+        MaxHeapify(array, 0, HeapSize, length);
+    }
+}
+
+/*
+void sift_down(int *array, size_t root, size_t end, size_t size)
+{
+    size_t left_child, right_child, swap;
+    int temp;
+
+    while ((left_child = (2 * root) + 1) <= end)
+    {
+        swap = root;
+        right_child = left_child + 1;
+        if (array[swap] < array[left_child])
+            swap = left_child;
+        if (right_child <= end && array[swap] < array[right_child])
+            swap = right_child;
+        if (swap == root)
+            return;
+        temp = array[root];
+        array[root] = array[swap];
+        array[swap] = temp;
+        root = swap;
+    }
+}
+void make_heap(int *array, size_t size)
+{
+    size_t parent;
+
+    for (parent = ((size - 1) - 1) / 2; 1; parent--)
+    {
+        sift_down(array, parent, size - 1, size);
+        if (parent == 0)
+            break;
+    }
+}
+void HeapSort(int *array, size_t size)
+{
+    size_t end;
+    int temp;
+
+    if (array == NULL || size < 2)
+        return;
+    make_heap(array, size);
+    end = size - 1;
+    while (end > 0)
+    {
+        temp = array[end];
+        array[end] = array[0];
+        array[0] = temp;
+        end--;
+        sift_down(array, 0, end, size);
+    }
+}
+ https://github.com/alexaorrico/holbertonschool-low_level_programming/blob/master/0x1A-sorting_algorithms/104-heap_sort.c
+
+ */
