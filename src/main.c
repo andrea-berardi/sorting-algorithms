@@ -41,9 +41,10 @@ int main(int argc, char *argv[]) {
     //lab_2("../results/lab_2.csv", 1, 50000, 50, 1000, THRESHOLD, SEED, DEBUG_MODE);
 
     // Experiment n.3 - Median of Three Quick Sort
-    lab_3("../results/lab_3.csv", 0, 50000, 100, 1000, THRESHOLD, SEED, DEBUG_MODE);
+    //lab_3("../results/lab_3.csv", 0, 50000, 100, 1000, THRESHOLD, SEED, DEBUG_MODE);
 
-    // Experiment n.4 - (TODO)
+    // Experiment n.4 - Real World Sorting Algorithm(s)
+    lab_4("../results/lab_4.csv", 0, 50000, 100, 1000, THRESHOLD, SEED, DEBUG_MODE);
 
     if (fclose(fp) == EOF)
         fprintf(stderr, "Failed to flush buffered data on `%s`\n", argv[1]);

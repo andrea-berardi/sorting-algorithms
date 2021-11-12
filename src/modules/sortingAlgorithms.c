@@ -178,3 +178,14 @@ void MedianOfThreeQuickSort(int array[], ssize_t l, ssize_t r) {
         MedianOfThreeQuickSort(array, q + 1, r);
     }
 }
+
+// Tail Recursive Quick Sort
+void TailQuickSort(int array[], ssize_t l, ssize_t r) {
+    while (l < r) {
+        ssize_t q = Partition(array, l, r);
+
+        TailQuickSort(array, l, q - 1);
+
+        l = q + 1;
+    }
+}

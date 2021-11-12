@@ -26,6 +26,11 @@ void lab_3(char file[], ssize_t min_length, ssize_t max_length, size_t max_insta
            unsigned SEED,
            unsigned DEBUG_MODE);
 
+// Experiment n.4 - Tail Recursive Quick Sort
+void lab_4(char file[], ssize_t min_length, ssize_t max_length, size_t max_instances, ssize_t step, size_t THRESHOLD,
+           unsigned SEED,
+           unsigned DEBUG_MODE);
+
 #endif //SORTING_ALGORITHMS_EXPERIMENTS_H
 
 // #pragma once
