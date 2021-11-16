@@ -3,7 +3,7 @@
 
 #include "../headers/utils.h"
 
-// Generate a random N-length array, given N
+// Generate a random array, given its length
 int *gen_rnd_array(const size_t length) {
     int *array = malloc(length * sizeof(int));
     if (array == NULL) {

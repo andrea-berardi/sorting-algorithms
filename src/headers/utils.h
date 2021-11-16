@@ -6,7 +6,7 @@
 #ifndef SORTING_ALGORITHMS_UTILS_H
 #define SORTING_ALGORITHMS_UTILS_H
 
-// Generate a random N-length array, given N
+// Generate a random array, given its length
 int *gen_rnd_array(size_t length);
 
 // Swap two integers of an array
