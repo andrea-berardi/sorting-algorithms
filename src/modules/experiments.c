@@ -12,15 +12,7 @@ double experiment_4(ssize_t length, size_t max_instances, unsigned algorithm, co
     clock_t t_tot = 0;
 
     for (size_t instance = 1; instance <= max_instances; ++instance) {
-        int *array = malloc(length * sizeof(int));
-        if (array == NULL) {
-            fprintf(stderr, "Error: couldn't allocate %zu-cells array, size: %zu bytes).\n", length,
-                    length * sizeof(int));
-            exit(EXIT_FAILURE);
-        }
-
-        for (size_t index = 0; index < length; ++index)
-            array[index] = rand() % (int) length; // random value between 0 and `length` (0 <= value < length)
+        int *array = gen_rnd_array(length);
 
         // If length is 0 and the algorithm is NOT Insertion Sort, and so, just for the first run of the experiment,
         // we will raise it to 1, to avoid "double free" errors. Why? Because MergeSort() is meant to be called
@@ -28,7 +20,7 @@ double experiment_4(ssize_t length, size_t max_instances, unsigned algorithm, co
         // with length equals to -1.
         // We don't need to restore length to the correct value because it is copied, not passed by reference.
         // The "real" value is unaffected.
-        if (length == 0 && algorithm != IS) ++length;
+        if (length == 0 && algorithm != IS && algorithm != HPS) ++length;
 
         clock_t t_start, t_end;
 
@@ -84,7 +76,6 @@ double experiment_4(ssize_t length, size_t max_instances, unsigned algorithm, co
             case HPS: {
                 t_start = clock(); // starting processor time stopwatch
                 HeapSort(array, length); // sorting the array
-                //HybridSort(array, 0, length - 1, THRESHOLD);
                 t_end = clock();
 
                 break;
@@ -164,15 +155,7 @@ double experiment_3(ssize_t length, size_t max_instances, unsigned algorithm, co
     clock_t t_tot = 0;
 
     for (size_t instance = 1; instance <= max_instances; ++instance) {
-        int *array = malloc(length * sizeof(int));
-        if (array == NULL) {
-            fprintf(stderr, "Error: couldn't allocate %zu-cells array, size: %zu bytes).\n", length,
-                    length * sizeof(int));
-            exit(EXIT_FAILURE);
-        }
-
-        for (size_t index = 0; index < length; ++index)
-            array[index] = rand() % (int) length; // random value between 0 and `length` (0 <= value < length)
+        int *array = gen_rnd_array(length);
 
         // If length is 0 and the algorithm is NOT Insertion Sort, and so, just for the first run of the experiment,
         // we will raise it to 1, to avoid "double free" errors. Why? Because MergeSort() is meant to be called
@@ -293,15 +276,7 @@ double experiment_2(size_t length, size_t max_instances, unsigned algorithm, con
     clock_t t_tot = 0;
 
     for (size_t instance = 1; instance <= max_instances; ++instance) {
-        int *array = malloc(length * sizeof(int));
-        if (array == NULL) {
-            fprintf(stderr, "Error: couldn't allocate %zu-cells array, size: %zu bytes).\n", length,
-                    length * sizeof(int));
-            exit(EXIT_FAILURE);
-        }
-
-        for (size_t index = 0; index < length; ++index)
-            array[index] = rand() % (int) length; // random value between 0 and `length` (0 <= value < length)
+        int *array = gen_rnd_array(length);
 
         // If length is 0 and the algorithm is NOT Insertion Sort, and so, just for the first run of the experiment,
         // we will raise it to 1, to avoid "double free" errors. Why? Because MergeSort() is meant to be called
@@ -398,15 +373,7 @@ double experiment_2A(size_t length, size_t max_instances, const unsigned DEBUG_M
     clock_t t_tot = 0;
 
     for (size_t instance = 1; instance <= max_instances; ++instance) {
-        int *array = malloc(length * sizeof(int));
-        if (array == NULL) {
-            fprintf(stderr, "Error: couldn't allocate %zu-cells array, size: %zu bytes).\n", length,
-                    length * sizeof(int));
-            exit(EXIT_FAILURE);
-        }
-
-        for (size_t index = 0; index < length; ++index)
-            array[index] = rand() % (int) length; // random value between 0 and `length` (0 <= value < length)
+        int *array = gen_rnd_array(length);
 
         // If length is 0, and so, just for the first run of the experiment, we will raise it to 1, to avoid
         // "double free" errors. Why? Because MergeSort() is meant to be called with "length - 1" and using 0
@@ -461,15 +428,7 @@ double experiment_2B(size_t length, size_t max_instances, size_t THRESHOLD, cons
     clock_t t_tot = 0;
 
     for (size_t instance = 1; instance <= max_instances; ++instance) {
-        int *array = malloc(length * sizeof(int));
-        if (array == NULL) {
-            fprintf(stderr, "Error: couldn't allocate %zu-cells array, size: %zu bytes).\n", length,
-                    length * sizeof(int));
-            exit(EXIT_FAILURE);
-        }
-
-        for (size_t index = 0; index < length; ++index)
-            array[index] = rand() % (int) length; // random value between 0 and `length` (0 <= value < length)
+        int *array = gen_rnd_array(length);
 
         // If length is 0, and so, just for the first run of the experiment, we will raise it to 1, to avoid
         // "double free" errors. Why? Because HybridSort() is meant to be called with "length - 1" and using 0
@@ -526,15 +485,7 @@ double experiment_1(size_t length, size_t max_instances, const unsigned DEBUG_MO
     clock_t t_tot = 0;
 
     for (size_t instance = 1; instance <= max_instances; ++instance) {
-        int *array = malloc(length * sizeof(int));
-        if (array == NULL) {
-            fprintf(stderr, "Error: couldn't allocate %zu-cells array, size: %zu bytes).\n", length,
-                    length * sizeof(int));
-            exit(EXIT_FAILURE);
-        }
-
-        for (size_t index = 0; index < length; ++index)
-            array[index] = rand() % (int) length; // random value between 0 and `length` (0 <= value < length)
+        int *array = gen_rnd_array(length);
 
         clock_t t_start, t_end;
 

@@ -3,6 +3,21 @@
 
 #include "../headers/utils.h"
 
+// Generate a random N-length array, given N
+int *gen_rnd_array(const size_t length) {
+    int *array = malloc(length * sizeof(int));
+    if (array == NULL) {
+        fprintf(stderr, "Error: couldn't allocate %zu-cells array, size: %zu bytes).\n", length,
+                length * sizeof(int));
+        exit(EXIT_FAILURE);
+    }
+
+    for (size_t index = 0; index < length; ++index)
+        array[index] = rand() % (int) length; // random value between 0 and `length` (0 <= value < length)
+
+    return array;
+}
+
 // Swap two integers of an array using pointers
 void swap(int *a, int *b) {
     int tmp = *a;
