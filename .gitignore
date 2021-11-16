@@ -12,3 +12,6 @@ cmake-build-release/
 
 # LibreOffice Calc files
 *.ods
+
+# Plots' pictures
+*.png
