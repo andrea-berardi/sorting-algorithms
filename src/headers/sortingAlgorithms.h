@@ -13,21 +13,30 @@ enum algorithm {
     TQS, // Tail Recursive Quick Sort
     HPS, // Heap Sort
     RWS, // Real World Sort (Heap Sort, Tail Recursive Quick Sort, Median of Three Quick Sort)
+    RQS, // Randomized Quick Sort
+    RTQS, // Randomized Tail Recursive Quick Sort
 };
 
+// IS - Insertion Sort
 void InsertionSort(int array[], size_t length);
 
+// MS - Merge Sort
 void MergeSort(int array[], size_t l, size_t r);
 
+// HS - Hybrid Sort
 void HybridSort(int array[], size_t l, size_t r, size_t THRESHOLD);
 
+// QS - Quick Sort
 void QuickSort(int array[], ssize_t l, ssize_t r);
 
+// MTQS - Median of Three Quick Sort
 void MedianOfThreeQuickSort(int array[], ssize_t l, ssize_t r);
 
+// TQS - Tail Recursive Quick Sort
 void TailQuickSort(int array[], ssize_t l, ssize_t r);
 
-void HeapSort(int array[], size_t length);
+// HPS - Heap Sort
+void HeapSort(int array[], ssize_t length);
 
 #endif //SORTING_ALGORITHMS_SORTINGALGORITHMS_H
 

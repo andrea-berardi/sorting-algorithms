@@ -206,7 +206,7 @@ size_t Right(size_t i) {
 }
 
 // Heap - Max-Heapify
-void MaxHeapify(int array[], size_t i, size_t HeapSize, size_t length) {
+void MaxHeapify(int array[], size_t i, ssize_t HeapSize, ssize_t length) {
     size_t l = Left(i);
     size_t r = Right(i);
 
@@ -218,7 +218,7 @@ void MaxHeapify(int array[], size_t i, size_t HeapSize, size_t length) {
         largest = i;
     }
 
-    if (r >= HeapSize && array[r] > largest) {
+    if (r <= HeapSize && array[r] > array[largest]) {
         largest = r;
     }
 
@@ -230,75 +230,21 @@ void MaxHeapify(int array[], size_t i, size_t HeapSize, size_t length) {
 }
 
 // Heap - Build-Max-Heap
-void BuildMaxHeap(int array[], size_t length) {
-    for (size_t i = ((length - 1) - 1) / 2; i >= 0; --i) {
-        MaxHeapify(array, i, length - 1, length);
+void BuildMaxHeap(int array[], ssize_t length) {
+    ssize_t HeapSize = length;
+    for (ssize_t i = length / 2; i >= 0; --i) {
+        MaxHeapify(array, i, HeapSize, length);
     }
 }
 
 // HeapSort
-void HeapSort(int array[], size_t length) {
-    size_t HeapSize = length - 1;
+void HeapSort(int array[], ssize_t length) {
+    ssize_t HeapSize = length;
     BuildMaxHeap(array, length);
 
-    for (size_t i = length; i > 0; --i) {
+    for (ssize_t i = length; i > 0; --i) {
         swap(&array[0], &array[i]);
         --HeapSize;
         MaxHeapify(array, 0, HeapSize, length);
     }
 }
-
-/*
-void sift_down(int *array, size_t root, size_t end, size_t size)
-{
-    size_t left_child, right_child, swap;
-    int temp;
-
-    while ((left_child = (2 * root) + 1) <= end)
-    {
-        swap = root;
-        right_child = left_child + 1;
-        if (array[swap] < array[left_child])
-            swap = left_child;
-        if (right_child <= end && array[swap] < array[right_child])
-            swap = right_child;
-        if (swap == root)
-            return;
-        temp = array[root];
-        array[root] = array[swap];
-        array[swap] = temp;
-        root = swap;
-    }
-}
-void make_heap(int *array, size_t size)
-{
-    size_t parent;
-
-    for (parent = ((size - 1) - 1) / 2; 1; parent--)
-    {
-        sift_down(array, parent, size - 1, size);
-        if (parent == 0)
-            break;
-    }
-}
-void HeapSort(int *array, size_t size)
-{
-    size_t end;
-    int temp;
-
-    if (array == NULL || size < 2)
-        return;
-    make_heap(array, size);
-    end = size - 1;
-    while (end > 0)
-    {
-        temp = array[end];
-        array[end] = array[0];
-        array[0] = temp;
-        end--;
-        sift_down(array, 0, end, size);
-    }
-}
- https://github.com/alexaorrico/holbertonschool-low_level_programming/blob/master/0x1A-sorting_algorithms/104-heap_sort.c
-
- */

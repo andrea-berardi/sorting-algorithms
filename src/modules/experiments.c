@@ -20,7 +20,7 @@ double experiment_4(ssize_t length, size_t max_instances, unsigned algorithm, co
         // with length equals to -1.
         // We don't need to restore length to the correct value because it is copied, not passed by reference.
         // The "real" value is unaffected.
-        if (length == 0 && algorithm != IS && algorithm != HPS) ++length;
+        if (length == 0 && algorithm != IS) ++length;
 
         clock_t t_start, t_end;
 
