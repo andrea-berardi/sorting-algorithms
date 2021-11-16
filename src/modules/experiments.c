@@ -91,6 +91,9 @@ double experiment_4(ssize_t length, size_t max_instances, unsigned algorithm, co
         t_tot += t_end - t_start;
 
         if (DEBUG_MODE) {
+            printf("%zu = %zu - %zu\n", t_end - t_start, t_end, t_start);
+            printf("%zu / %zu = %lf\n", t_tot, max_instances, t_tot / (double) max_instances);
+
             // if length is 1, then we've just modified it for the first run, reset it to 0
             if (is_sorted(array, length == 1 ? --length : length))
                 printf("Array sorted successfully (d: %zu)\n", length);
