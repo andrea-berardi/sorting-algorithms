@@ -38,6 +38,9 @@ void TailQuickSort(int array[], ssize_t l, ssize_t r);
 // HPS - Heap Sort
 void HeapSort(int array[], ssize_t length);
 
+// RWS - Real World Sort
+void RealWorldSort(int array[], ssize_t length);
+
 #endif //SORTING_ALGORITHMS_SORTINGALGORITHMS_H
 
 // #pragma once

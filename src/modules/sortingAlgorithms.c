@@ -191,9 +191,9 @@ void TailQuickSort(int array[], ssize_t l, ssize_t r) {
 }
 
 // Heap - Parent
-size_t Parent(i) {
-    return i / 2;
-}
+// size_t Parent(size_t i) {
+//     return i / 2;
+// }
 
 // Heap - Left branch
 size_t Left(size_t i) {

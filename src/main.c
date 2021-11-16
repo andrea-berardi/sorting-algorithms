@@ -21,25 +21,16 @@ int main(int argc, char *argv[]) {
         exit(EXIT_FAILURE);
     }
 
-    /*
-    // Experiment n.1 - Insertion Sort
+    /* Experiment n.1 - Insertion Sort
     lab_1("../results/lab_1.csv", 0, 50000, 50, 1000, SEED, DEBUG_MODE);
-
-    // Additional scope for testing purposes
-    {
-        // Experiment n.2A - Merge Sort
-        lab_2A("../results/lab_2A.csv", 1, 50000, 50, 1000, SEED, DEBUG_MODE);
-
-        // Experiment n.2B - Find T (threshold) for Merge Sort and Insertion Sort
-        lab_1("../results/lab_2B-1.csv", 1, 5000, 100, 1, SEED, DEBUG_MODE); // finding the threshold
-        lab_2A("../results/lab_2B-2.csv", 1, 5000, 100, 1, SEED, DEBUG_MODE); // finding the threshold
-        lab_2B("../results/lab_2B.csv", 1, 50000, 50, 1000, THRESHOLD, SEED, DEBUG_MODE);
-    }
-    */
-
+    // Experiment n.2A - Merge Sort
+    lab_2A("../results/lab_2A.csv", 1, 50000, 50, 1000, SEED, DEBUG_MODE);
+    // Experiment n.2B - Find T (threshold) for Merge Sort and Insertion Sort
+    lab_1("../results/lab_2B-1.csv", 1, 5000, 100, 1, SEED, DEBUG_MODE); // finding the threshold
+    lab_2A("../results/lab_2B-2.csv", 1, 5000, 100, 1, SEED, DEBUG_MODE); // finding the threshold
+    lab_2B("../results/lab_2B.csv", 1, 50000, 50, 1000, THRESHOLD, SEED, DEBUG_MODE);*/
     // Experiment n.2 - Insertion Sort, Merge Sort, Hybrid Sort
     //lab_2("../results/lab_2.csv", 1, 50000, 50, 1000, THRESHOLD, SEED, DEBUG_MODE);
-
     // Experiment n.3 - Median of Three Quick Sort
     //lab_3("../results/lab_3.csv", 0, 50000, 100, 1000, THRESHOLD, SEED, DEBUG_MODE);
 
