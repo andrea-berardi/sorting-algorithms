@@ -239,6 +239,8 @@ void BuildMaxHeap(int array[], ssize_t length) {
 
 // HeapSort
 void HeapSort(int array[], ssize_t length) {
+    if (length < 2) return;
+
     ssize_t HeapSize = length;
     BuildMaxHeap(array, length);
 

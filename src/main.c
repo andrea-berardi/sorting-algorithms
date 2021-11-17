@@ -6,7 +6,7 @@
 #include "headers/utils.h"
 
 const bool DEBUG_MODE = false;
-const size_t THRESHOLD = 199;
+const size_t THRESHOLD = 340;
 const unsigned SEED = 10;
 
 int main(int argc, char *argv[]) {
@@ -35,7 +35,7 @@ int main(int argc, char *argv[]) {
     //lab_3("../results/lab_3.csv", 0, 50000, 100, 1000, THRESHOLD, SEED, DEBUG_MODE);
 
     // Experiment n.4 - Real World Sorting Algorithm(s)
-    lab_4("../results/lab_4D.csv", 0, 10000, 100, 50, THRESHOLD, SEED, DEBUG_MODE);
+    lab_4("../results/lab_4D.csv", 0, 10000, 100, 100, THRESHOLD, SEED, DEBUG_MODE);
 
     if (fclose(fp) == EOF)
         fprintf(stderr, "Failed to flush buffered data on `%s`\n", argv[1]);

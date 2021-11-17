@@ -4,3 +4,5 @@ project(sorting_algorithms C)
 set(CMAKE_C_STANDARD 11)
 
 add_executable(sorting_algorithms src/main.c src/modules/utils.c src/headers/utils.h src/modules/sortingAlgorithms.c src/headers/sortingAlgorithms.h src/modules/experiments.c src/headers/experiments.h)
+
+#set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fsanitize=address -fsanitize=undefined -fsanitize=leak -g")
