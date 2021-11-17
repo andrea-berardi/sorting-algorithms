@@ -6,7 +6,7 @@
 #include "headers/utils.h"
 
 const bool DEBUG_MODE = false; // this flag toggles debug checks (e.g. it checks if the algorithms sort correctly)
-const size_t THRESHOLD = 340; // it used to be 199, but it varies... for some reasons ¯\_(ツ)_/¯
+const size_t THRESHOLD = 199; // it used to be 340, but it varies... for some reasons ¯\_(ツ)_/¯
 const unsigned int SEED = 10; // srand()'s starting seed
 
 int main(int argc, char *argv[]) {
@@ -18,9 +18,9 @@ int main(int argc, char *argv[]) {
 
     /* Configurations */
     ssize_t min_length = 0; // minimum length of the arrays
-    ssize_t max_length = 50000; // maximum length of the arrays
+    ssize_t max_length = 1000; // maximum length of the arrays
     size_t max_instances = 100; // how many times to repeat the same test
-    ssize_t step = 1000; // the arrays will grow this much at each test
+    ssize_t step = 1; // the arrays will grow this much at each test
 
     /* Experiment n.4 (it runs all tests) */
     // Insertion Sort, Merge Sort, Hybrid Sort, Quick Sort, Median of Three Quick Sort,
