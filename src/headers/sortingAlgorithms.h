@@ -13,8 +13,6 @@ enum algorithm {
     TQS, // Tail Recursive Quick Sort
     HPS, // Heap Sort
     RWS, // Real World Sort (Heap Sort, Tail Recursive Quick Sort, Median of Three Quick Sort)
-    RQS, // Randomized Quick Sort
-    RTQS, // Randomized Tail Recursive Quick Sort
 };
 
 // IS - Insertion Sort

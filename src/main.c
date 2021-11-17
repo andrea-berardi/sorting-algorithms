@@ -35,7 +35,7 @@ int main(int argc, char *argv[]) {
     //lab_3("../results/lab_3.csv", 0, 50000, 100, 1000, THRESHOLD, SEED, DEBUG_MODE);
 
     // Experiment n.4 - Real World Sorting Algorithm(s)
-    lab_4("../results/lab_4C.csv", 0, 1000, 100, 1, THRESHOLD, SEED, DEBUG_MODE);
+    lab_4("../results/lab_4D.csv", 0, 10000, 100, 50, THRESHOLD, SEED, DEBUG_MODE);
 
     if (fclose(fp) == EOF)
         fprintf(stderr, "Failed to flush buffered data on `%s`\n", argv[1]);
