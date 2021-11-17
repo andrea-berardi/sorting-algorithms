@@ -15,25 +15,25 @@ This repository contains a bunch of sorting algorithms and allows to easily test
 ## Project Structure
 
 ```
-sorting-algorithms  
-├── CMakeLists.txt  
-├── docs  
-│  ├── Laboratorio 01 - Insertion Sort e struttura esperimenti.pdf  
-│  ├── Laboratorio 02 - Merge Sort e Hybrid Sort.pdf  
-│  ├── Laboratorio 03 - Quick Sort con Mediana di Tre.pdf  
-│  └── Laboratorio 04 - Quick Sort con Tail Recursion ottimizzato.pdf  
-├── README.md  
-├── results  
-│  ├── results.csv  
-│  └── results.ods  
-└── src  
-   ├── headers  
-   │  ├── experiments.h  
-   │  ├── sortingAlgorithms.h  
-   │  └── utils.h  
-   ├── main.c  
-   └── modules  
-      ├── experiments.c  
-      ├── sortingAlgorithms.c  
-      └── utils.c  
+sorting-algorithms
+├── CMakeLists.txt
+├── docs
+│  ├── Laboratorio 01 - Insertion Sort e struttura esperimenti.pdf
+│  ├── Laboratorio 02 - Merge Sort e Hybrid Sort.pdf
+│  ├── Laboratorio 03 - Quick Sort con Mediana di Tre.pdf
+│  └── Laboratorio 04 - Quick Sort con Tail Recursion ottimizzato.pdf
+├── README.md
+├── results
+│  ├── results.csv
+│  └── results.ods
+└── src
+   ├── headers
+   │  ├── experiments.h
+   │  ├── sortingAlgorithms.h
+   │  └── utils.h
+   ├── main.c
+   └── modules
+      ├── experiments.c
+      ├── sortingAlgorithms.c
+      └── utils.c
 ```
