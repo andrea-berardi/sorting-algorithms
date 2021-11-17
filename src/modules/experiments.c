@@ -7,7 +7,7 @@
 #include "../headers/utils.h"
 
 // Experiment n.4 - Tail Recursive Quick Sort, Median of Three Quick Sort, Heap Sort
-double experiment_4(ssize_t length, size_t max_instances, unsigned algorithm, const size_t THRESHOLD,
+long double experiment_4(ssize_t length, size_t max_instances, unsigned algorithm, const size_t THRESHOLD,
                     const unsigned DEBUG_MODE) {
     clock_t t_tot = 0;
 
@@ -92,7 +92,7 @@ double experiment_4(ssize_t length, size_t max_instances, unsigned algorithm, co
 
         if (DEBUG_MODE) {
             printf("%zu = %zu - %zu\n", t_end - t_start, t_end, t_start);
-            printf("%zu / %zu = %lf\n", t_tot, max_instances, t_tot / (double) max_instances);
+            printf("%zu / %zu = %Lf\n", t_tot, max_instances, (long double) t_tot / (long double) max_instances);
 
             // if length is 1, then we've just modified it for the first run, reset it to 0
             if (is_sorted(array, length == 1 ? --length : length))
@@ -105,7 +105,7 @@ double experiment_4(ssize_t length, size_t max_instances, unsigned algorithm, co
         array = NULL; // setting the pointer to NULL
     }
 
-    return t_tot / (double) max_instances;
+    return (long double) t_tot / (long double) max_instances;
 }
 
 void lab_4(char file[], ssize_t min_length, ssize_t max_length, size_t max_instances, ssize_t step, const size_t THRESHOLD,
@@ -122,27 +122,27 @@ void lab_4(char file[], ssize_t min_length, ssize_t max_length, size_t max_insta
     fprintf(fp, "Dimension (n),Insertion Sort,Merge Sort,Hybrid Sort,Quick Sort,Median of Three Quick Sort,Tail Recursive Quick Sort,Heap Sort\n");
     for (ssize_t length = min_length; length <= max_length; length += step) {
         srand(seed);
-        double time_IS = experiment_4(length, max_instances, IS, THRESHOLD, DEBUG_MODE);
+        long double time_IS = experiment_4(length, max_instances, IS, THRESHOLD, DEBUG_MODE);
 
         srand(seed);
-        double time_MS = experiment_4(length, max_instances, MS, THRESHOLD, DEBUG_MODE);
+        long double time_MS = experiment_4(length, max_instances, MS, THRESHOLD, DEBUG_MODE);
 
         srand(seed);
-        double time_HS = experiment_4(length, max_instances, HS, THRESHOLD, DEBUG_MODE);
+        long double time_HS = experiment_4(length, max_instances, HS, THRESHOLD, DEBUG_MODE);
 
         srand(seed);
-        double time_QS = experiment_4(length, max_instances, QS, THRESHOLD, DEBUG_MODE);
+        long double time_QS = experiment_4(length, max_instances, QS, THRESHOLD, DEBUG_MODE);
 
         srand(seed);
-        double time_MTQS = experiment_4(length, max_instances, MTQS, THRESHOLD, DEBUG_MODE);
+        long double time_MTQS = experiment_4(length, max_instances, MTQS, THRESHOLD, DEBUG_MODE);
 
         srand(seed);
-        double time_TQS = experiment_4(length, max_instances, TQS, THRESHOLD, DEBUG_MODE);
+        long double time_TQS = experiment_4(length, max_instances, TQS, THRESHOLD, DEBUG_MODE);
 
         srand(seed);
-        double time_HPS = experiment_4(length, max_instances, HPS, THRESHOLD, DEBUG_MODE);
+        long double time_HPS = experiment_4(length, max_instances, HPS, THRESHOLD, DEBUG_MODE);
 
-        fprintf(fp, "%zu,%lf,%lf,%lf,%lf,%lf,%lf,%lf\n", length, time_IS, time_MS, time_HS, time_QS,
+        fprintf(fp, "%zu,%Lf,%Lf,%Lf,%Lf,%Lf,%Lf,%Lf\n", length, time_IS, time_MS, time_HS, time_QS,
                 time_MTQS, time_TQS, time_HPS); // write to file
 
         ++seed;
@@ -152,6 +152,7 @@ void lab_4(char file[], ssize_t min_length, ssize_t max_length, size_t max_insta
         fprintf(stderr, "Failed to flush buffered data on `%s`\n", file);
 }
 
+/*
 // Experiment n.3 - (Insertion Sort, Merge Sort, Hybrid Sort) Quick Sort, Median of Three Quick Sort
 double experiment_3(ssize_t length, size_t max_instances, unsigned algorithm, const size_t THRESHOLD,
                     const unsigned DEBUG_MODE) {
@@ -529,3 +530,4 @@ void lab_1(char file[], size_t min_length, size_t max_length, size_t max_instanc
     if (fclose(fp) == EOF)
         fprintf(stderr, "Failed to flush buffered data on `%s`\n", file);
 }
+*/

@@ -3,6 +3,12 @@
 #ifndef SORTING_ALGORITHMS_EXPERIMENTS_H
 #define SORTING_ALGORITHMS_EXPERIMENTS_H
 
+// Experiment n.4 - Tail Recursive Quick Sort
+void lab_4(char file[], ssize_t min_length, ssize_t max_length, size_t max_instances, ssize_t step, size_t THRESHOLD,
+           unsigned SEED,
+           unsigned DEBUG_MODE);
+
+/*
 // Experiment n.1 - Insertion Sort
 void lab_1(char file[], size_t min_length, size_t max_length, size_t max_instances, size_t step, unsigned SEED,
            unsigned DEBUG_MODE);
@@ -25,11 +31,7 @@ void lab_2(char file[], size_t min_length, size_t max_length, size_t max_instanc
 void lab_3(char file[], ssize_t min_length, ssize_t max_length, size_t max_instances, ssize_t step, size_t THRESHOLD,
            unsigned SEED,
            unsigned DEBUG_MODE);
-
-// Experiment n.4 - Tail Recursive Quick Sort
-void lab_4(char file[], ssize_t min_length, ssize_t max_length, size_t max_instances, ssize_t step, size_t THRESHOLD,
-           unsigned SEED,
-           unsigned DEBUG_MODE);
+*/
 
 #endif //SORTING_ALGORITHMS_EXPERIMENTS_H
 
