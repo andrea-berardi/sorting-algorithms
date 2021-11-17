@@ -14,7 +14,7 @@ This repository contains a bunch of sorting algorithms and allows to easily test
 
 ## Project Structure
 
-sorting-algorithms  
+`sorting-algorithms  
 ├── CMakeLists.txt  
 ├── docs  
 │  ├── Laboratorio 01 - Insertion Sort e struttura esperimenti.pdf  
@@ -34,4 +34,4 @@ sorting-algorithms
    └── modules  
       ├── experiments.c  
       ├── sortingAlgorithms.c  
-      └── utils.c  
+      └── utils.c`
