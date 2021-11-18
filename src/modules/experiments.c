@@ -81,6 +81,22 @@ long double experiment_4(ssize_t length, size_t max_instances, unsigned algorith
                 break;
             }
 
+            case MTTQS: {
+                t_start = clock(); // starting processor time stopwatch
+                MedianOfThreeTailQuickSort(array, 0, length - 1); // sorting the array
+                t_end = clock();
+
+                break;
+            }
+
+            case RWS: {
+                t_start = clock(); // starting processor time stopwatch
+                RealWorldSort(array, length, THRESHOLD); // sorting the array
+                t_end = clock();
+
+                break;
+            }
+
             default: {
                 fprintf(stderr, "Unknown algorithm `%d`\n", algorithm);
 
@@ -120,7 +136,7 @@ lab_4(char file[], ssize_t min_length, ssize_t max_length, size_t max_instances,
     }
 
     fprintf(fp,
-            "Dimension (n),Insertion Sort,Merge Sort,Hybrid Sort,Quick Sort,Median of Three Quick Sort,Tail Recursive Quick Sort,Heap Sort\n");
+            "Dimension (n),Insertion Sort,Merge Sort,Hybrid Sort,Quick Sort,Median of Three Quick Sort,Tail Recursive Quick Sort,Heap Sort,Median of Three Tail Quick Sort\n");
     for (ssize_t length = min_length; length <= max_length; length += step) {
         srand(seed);
         long double time_IS = experiment_4(length, max_instances, IS, THRESHOLD, DEBUG_MODE);
@@ -143,8 +159,11 @@ lab_4(char file[], ssize_t min_length, ssize_t max_length, size_t max_instances,
         srand(seed);
         long double time_HPS = experiment_4(length, max_instances, HPS, THRESHOLD, DEBUG_MODE);
 
-        fprintf(fp, "%zu,%Lf,%Lf,%Lf,%Lf,%Lf,%Lf,%Lf\n", length, time_IS, time_MS, time_HS, time_QS,
-                time_MTQS, time_TQS, time_HPS); // write to file
+        srand(seed);
+        long double time_MTTQS = experiment_4(length, max_instances, MTTQS, THRESHOLD, DEBUG_MODE);
+
+        fprintf(fp, "%zu,%Lf,%Lf,%Lf,%Lf,%Lf,%Lf,%Lf,%Lf\n", length, time_IS, time_MS, time_HS, time_QS,
+                time_MTQS, time_TQS, time_HPS, time_MTTQS); // write to file
 
         ++seed;
     }

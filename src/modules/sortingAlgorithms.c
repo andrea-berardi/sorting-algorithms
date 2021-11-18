@@ -251,4 +251,22 @@ void HeapSort(int array[], ssize_t length) {
     }
 }
 
+// Median of Three Tail Quick Sort
+void MedianOfThreeTailQuickSort(int array[], ssize_t l, ssize_t r) {
+    while (l < r) {
+        ssize_t q = Partition(array, l, r);
+
+        MedianOfThreeTailQuickSort(array, l, q - 1);
+
+        l = q + 1;
+    }
+}
+
 // Real World Sort
+void RealWorldSort(int array[], ssize_t length, const size_t THRESHOLD) {
+    if (length > THRESHOLD) {
+        MedianOfThreeTailQuickSort(array, 0, length);
+    } else {
+        HeapSort(array, length);
+    }
+}
