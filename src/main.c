@@ -18,9 +18,9 @@ int main(int argc, char *argv[]) {
 
     /* Configurations */
     ssize_t min_length = 0; // minimum length of the arrays
-    ssize_t max_length = 1000; // maximum length of the arrays
+    ssize_t max_length = 50000; // maximum length of the arrays
     size_t max_instances = 100; // how many times to repeat the same test
-    ssize_t step = 1; // the arrays will grow this much at each test
+    ssize_t step = 1000; // the arrays will grow this much at each test
 
     /* Experiment n.4 (it runs all tests) */
     // Insertion Sort, Merge Sort, Hybrid Sort, Quick Sort, Median of Three Quick Sort,

@@ -22,7 +22,7 @@ void InsertionSort(int array[], size_t length);
 void MergeSort(int array[], size_t l, size_t r);
 
 // HS - Hybrid Sort
-void HybridSort(int array[], size_t l, size_t r, size_t THRESHOLD);
+void HybridSort(int array[], ssize_t l, ssize_t r, size_t THRESHOLD);
 
 // QS - Quick Sort
 void QuickSort(int array[], ssize_t l, ssize_t r);

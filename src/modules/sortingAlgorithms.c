@@ -6,9 +6,9 @@
 
 // Insertion Sort
 void InsertionSort(int array[], size_t length) {
-    for (size_t j = 1; j < length; ++j) {
+    for (ssize_t j = 1; j < length; ++j) {
         int key = array[j];
-        size_t i = j - 1;
+        ssize_t i = j - 1;
 
         while (i >= 0 && array[i] > key) {
             array[i + 1] = array[i];
@@ -82,10 +82,10 @@ void MergeSort(int array[], size_t l, size_t r) {
 }
 
 // Adapted Insertion Sort
-void AdaptedInsertionSort(int array[], size_t l, size_t r) {
-    for (size_t j = l + 1; j < r; ++j) {
+void AdaptedInsertionSort(int array[], ssize_t l, size_t r) {
+    for (ssize_t j = l + 1; j < r; ++j) {
         int key = array[j];
-        size_t i = j - 1;
+        ssize_t i = j - 1;
 
         while (i >= l && array[i] > key) {
             array[i + 1] = array[i];
@@ -97,9 +97,9 @@ void AdaptedInsertionSort(int array[], size_t l, size_t r) {
 }
 
 // Hybrid Sort (usage: HybridSort(A, left, right - 1, threshold))
-void HybridSort(int array[], size_t l, size_t r, const size_t THRESHOLD) {
+void HybridSort(int array[], ssize_t l, ssize_t r, const size_t THRESHOLD) {
     if (r - l > THRESHOLD) {
-        size_t c = (l + r) / 2;
+        ssize_t c = (l + r) / 2;
 
         HybridSort(array, l, c, THRESHOLD);
         HybridSort(array, c + 1, r, THRESHOLD);
@@ -196,29 +196,29 @@ void TailQuickSort(int array[], ssize_t l, ssize_t r) {
 // }
 
 // Heap - Left branch
-size_t Left(size_t i) {
+ssize_t Left(ssize_t i) {
     return 2 * i;
 }
 
 // Heap - Right branch
-size_t Right(size_t i) {
+ssize_t Right(ssize_t i) {
     return 2 * i + 1;
 }
 
 // Heap - Max-Heapify
-void MaxHeapify(int array[], size_t i, ssize_t HeapSize, ssize_t length) {
-    size_t l = Left(i);
-    size_t r = Right(i);
+void MaxHeapify(int array[], ssize_t i, ssize_t HeapSize, ssize_t length) {
+    ssize_t l = Left(i);
+    ssize_t r = Right(i);
 
-    size_t largest;
+    ssize_t largest;
 
-    if (l <= HeapSize && array[l] > array[i]) {
+    if (l < HeapSize && array[l] > array[i]) {
         largest = l;
     } else {
         largest = i;
     }
 
-    if (r <= HeapSize && array[r] > array[largest]) {
+    if (r < HeapSize && array[r] > array[largest]) {
         largest = r;
     }
 
@@ -239,12 +239,12 @@ void BuildMaxHeap(int array[], ssize_t length) {
 
 // HeapSort
 void HeapSort(int array[], ssize_t length) {
-    if (length < 2) return;
+    if (length < 2) return; // there's no reason to sort an empty or single-element array
 
     ssize_t HeapSize = length;
     BuildMaxHeap(array, length);
 
-    for (ssize_t i = length; i > 0; --i) {
+    for (ssize_t i = length - 1; i > 0; --i) {
         swap(&array[0], &array[i]);
         --HeapSize;
         MaxHeapify(array, 0, HeapSize, length);
