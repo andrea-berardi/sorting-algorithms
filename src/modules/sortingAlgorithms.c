@@ -262,11 +262,12 @@ void MedianOfThreeTailQuickSort(int array[], ssize_t l, ssize_t r) {
     }
 }
 
-// Real World Sort
+// Real World Sort (Median Of Three Tail Quick Sort, Heap Sort)
 void RealWorldSort(int array[], ssize_t length, const size_t THRESHOLD) {
     if (length > THRESHOLD) {
         MedianOfThreeTailQuickSort(array, 0, length);
     } else {
+        // this would actually run faster with Insertion Sort, on my machine
         HeapSort(array, length);
     }
 }
