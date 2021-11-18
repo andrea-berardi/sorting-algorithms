@@ -13,7 +13,7 @@ int main(int argc, char *argv[]) {
     if (argc != 2) {
         fprintf(stderr, "Wrong number of arguments supplied.\n");
         fprintf(stderr, "Usage: `.%s <file>`.\n", argv[0]);
-        fprintf(stdout, "Defaulting to `../results/results.csv`\n");
+        fprintf(stdout, "Defaulting to `../results/results_total.csv`\n");
     }
 
     /* Configurations */
@@ -22,10 +22,10 @@ int main(int argc, char *argv[]) {
     size_t max_instances = 1; // how many times to repeat the same test
     ssize_t step = 1; // the arrays will grow this much at each test
 
-    /* Experiment n.4 (it runs all tests) */
+    /* Final Experiment (it runs all tests) */
     // Insertion Sort, Merge Sort, Hybrid Sort, Quick Sort, Median of Three Quick Sort,
-    // Tail Recursive Quick Sort, Heap Sort, Real World Sort
-    lab_4(argc != 2 ? "../results/results.csv" : argv[1], min_length, max_length, max_instances, step, THRESHOLD, SEED, DEBUG_MODE);
+    // Tail Recursive Quick Sort, Heap Sort, Median of Three Tail Quick Sort, Real World Sort
+    lab_tot(argc != 2 ? "../results/results_total.csv" : argv[1], min_length, max_length, max_instances, step, THRESHOLD, SEED, DEBUG_MODE);
 
     return EXIT_SUCCESS;
 }
