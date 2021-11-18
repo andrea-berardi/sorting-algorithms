@@ -98,7 +98,7 @@ long double experiment_tot(ssize_t length, size_t max_instances, unsigned algori
             }
 
             default: {
-                fprintf(stderr, "Unknown algorithm `%d`\n", algorithm);
+                fprintf(stderr, "Unknown algorithm `%u`\n", algorithm);
 
                 exit(EXIT_FAILURE);
             }
@@ -112,7 +112,7 @@ long double experiment_tot(ssize_t length, size_t max_instances, unsigned algori
 
             // if length is 1, then we've just modified it for the first run, reset it to 0
             if (is_sorted(array, length == 1 ? --length : length))
-                printf("Array sorted successfully (d: %zu)\n", length);
+                printf("Array sorted successfully (d: %ld)\n", length);
             else
                 fprintf(stderr, "The array was not sorted correctly.\n"), print_array(array, length);
         }
@@ -165,7 +165,7 @@ lab_tot(char file[], ssize_t min_length, ssize_t max_length, size_t max_instance
         srand(seed);
         long double time_RWS = experiment_tot(length, max_instances, RWS, THRESHOLD, DEBUG_MODE);
 
-        fprintf(fp, "%zu,%Lf,%Lf,%Lf,%Lf,%Lf,%Lf,%Lf,%Lf,%Lf\n", length, time_IS, time_MS, time_HS, time_QS,
+        fprintf(fp, "%ld,%Lf,%Lf,%Lf,%Lf,%Lf,%Lf,%Lf,%Lf,%Lf\n", length, time_IS, time_MS, time_HS, time_QS,
                 time_MTQS, time_TQS, time_HPS, time_MTTQS, time_RWS); // write to file
 
         ++seed;
