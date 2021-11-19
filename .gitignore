@@ -15,3 +15,6 @@ cmake-build-release/
 
 # Plots' pictures
 # *.png
+
+# LibreOffice locks
+.~lock.*.ods#
