@@ -6,7 +6,7 @@
 #include "../headers/experiments.h"
 #include "../headers/utils.h"
 
-// Experiment n.4 - Tail Recursive Quick Sort, Median of Three Quick Sort, Heap Sort
+// Final experiment (it runs all tests)
 long double experiment_tot(ssize_t length, size_t max_instances, unsigned algorithm, const size_t THRESHOLD,
                          const unsigned DEBUG_MODE) {
     clock_t t_tot = 0;
@@ -124,11 +124,7 @@ long double experiment_tot(ssize_t length, size_t max_instances, unsigned algori
     return (long double) t_tot / (long double) max_instances;
 }
 
-void
-lab_tot(char file[], ssize_t min_length, ssize_t max_length, size_t max_instances, ssize_t step, const size_t THRESHOLD,
-      unsigned seed,
-      const bool DEBUG_MODE) {
-
+void lab_tot(char file[], Configuration conf, const bool DEBUG_MODE) {
     FILE *fp = fopen(file, "w+");
     if (fp == NULL) {
         fprintf(stderr, "Failed to open file `%s`\n", file);
@@ -137,38 +133,38 @@ lab_tot(char file[], ssize_t min_length, ssize_t max_length, size_t max_instance
 
     fprintf(fp,
             "Dimension (n),Insertion Sort,Merge Sort,Hybrid Sort,Quick Sort,Median of Three Quick Sort,Tail Recursive Quick Sort,Heap Sort,Median of Three Tail Quick Sort,Real World Sort\n");
-    for (ssize_t length = min_length; length <= max_length; length += step) {
-        srand(seed);
-        long double time_IS = experiment_tot(length, max_instances, IS, THRESHOLD, DEBUG_MODE);
+    for (ssize_t length = conf.min_length; length <= conf.max_length; length += conf.step) {
+        srand(conf.seed);
+        long double time_IS = experiment_tot(length, conf.max_instances, IS, conf.threshold, DEBUG_MODE);
 
-        srand(seed);
-        long double time_MS = experiment_tot(length, max_instances, MS, THRESHOLD, DEBUG_MODE);
+        srand(conf.seed);
+        long double time_MS = experiment_tot(length, conf.max_instances, MS, conf.threshold, DEBUG_MODE);
 
-        srand(seed);
-        long double time_HS = experiment_tot(length, max_instances, HS, THRESHOLD, DEBUG_MODE);
+        srand(conf.seed);
+        long double time_HS = experiment_tot(length, conf.max_instances, HS, conf.threshold, DEBUG_MODE);
 
-        srand(seed);
-        long double time_QS = experiment_tot(length, max_instances, QS, THRESHOLD, DEBUG_MODE);
+        srand(conf.seed);
+        long double time_QS = experiment_tot(length, conf.max_instances, QS, conf.threshold, DEBUG_MODE);
 
-        srand(seed);
-        long double time_MTQS = experiment_tot(length, max_instances, MTQS, THRESHOLD, DEBUG_MODE);
+        srand(conf.seed);
+        long double time_MTQS = experiment_tot(length, conf.max_instances, MTQS, conf.threshold, DEBUG_MODE);
 
-        srand(seed);
-        long double time_TQS = experiment_tot(length, max_instances, TQS, THRESHOLD, DEBUG_MODE);
+        srand(conf.seed);
+        long double time_TQS = experiment_tot(length, conf.max_instances, TQS, conf.threshold, DEBUG_MODE);
 
-        srand(seed);
-        long double time_HPS = experiment_tot(length, max_instances, HPS, THRESHOLD, DEBUG_MODE);
+        srand(conf.seed);
+        long double time_HPS = experiment_tot(length, conf.max_instances, HPS, conf.threshold, DEBUG_MODE);
 
-        srand(seed);
-        long double time_MTTQS = experiment_tot(length, max_instances, MTTQS, THRESHOLD, DEBUG_MODE);
+        srand(conf.seed);
+        long double time_MTTQS = experiment_tot(length, conf.max_instances, MTTQS, conf.threshold, DEBUG_MODE);
 
-        srand(seed);
-        long double time_RWS = experiment_tot(length, max_instances, RWS, THRESHOLD, DEBUG_MODE);
+        srand(conf.seed);
+        long double time_RWS = experiment_tot(length, conf.max_instances, RWS, conf.threshold, DEBUG_MODE);
 
         fprintf(fp, "%ld,%Lf,%Lf,%Lf,%Lf,%Lf,%Lf,%Lf,%Lf,%Lf\n", length, time_IS, time_MS, time_HS, time_QS,
                 time_MTQS, time_TQS, time_HPS, time_MTTQS, time_RWS); // write to file
 
-        ++seed;
+        ++conf.seed;
     }
 
     if (fclose(fp) == EOF)
