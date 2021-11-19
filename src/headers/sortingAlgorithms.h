@@ -17,13 +17,13 @@ typedef enum algorithm {
 } Algorithm;
 
 // IS - Insertion Sort
-void InsertionSort(int array[], size_t length);
+void InsertionSort(int array[], ssize_t length);
 
 // MS - Merge Sort
-void MergeSort(int array[], size_t l, size_t r);
+void MergeSort(int array[], ssize_t l, ssize_t r);
 
 // HS - Hybrid Sort
-void HybridSort(int array[], ssize_t l, ssize_t r, size_t THRESHOLD);
+void HybridSort(int array[], ssize_t l, ssize_t r, ssize_t THRESHOLD);
 
 // QS - Quick Sort
 void QuickSort(int array[], ssize_t l, ssize_t r);
@@ -41,7 +41,7 @@ void HeapSort(int array[], ssize_t length);
 void MedianOfThreeTailQuickSort(int array[], ssize_t l, ssize_t r);
 
 // RWS - Real World Sort
-void RealWorldSort(int array[], ssize_t length, size_t THRESHOLD);
+void RealWorldSort(int array[], ssize_t length, ssize_t THRESHOLD);
 
 #endif //SORTING_ALGORITHMS_SORTINGALGORITHMS_H
 

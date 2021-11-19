@@ -7,17 +7,17 @@
 #include "../headers/utils.h"
 
 // Final experiment (it runs all tests)
-long double experiment_tot(ssize_t length, size_t max_instances, Algorithm algorithm, const size_t THRESHOLD,
-                         const unsigned DEBUG_MODE) {
+long double experiment_tot(ssize_t length, size_t max_instances, Algorithm algorithm, const ssize_t THRESHOLD,
+                           const unsigned DEBUG_MODE) {
     clock_t t_tot = 0;
 
     for (size_t instance = 1; instance <= max_instances; ++instance) {
         int *array = gen_rnd_array(length);
 
         // If length is 0 and the algorithm is NOT Insertion Sort, and so, just for the first run of the experiment,
-        // we will raise it to 1, to avoid "double free" errors. Why? Because MergeSort() is meant to be called
+        // we will raise it to 1, to avoid "double free" errors. Why? Because sorting algorithms are meant to be called
         // with "length - 1" and using 0 as a starting point would make the first MergeSort() or HybridSort() call
-        // with length equals to -1.
+        // with length equals to - 1.
         // We don't need to restore length to the correct value because it is copied, not passed by reference.
         // The "real" value is unaffected.
         if (length == 0 && algorithm != IS) ++length;
@@ -112,7 +112,7 @@ long double experiment_tot(ssize_t length, size_t max_instances, Algorithm algor
 
             // if length is 1, then we've just modified it for the first run, reset it to 0
             if (is_sorted(array, length == 1 ? --length : length))
-                printf("Array sorted successfully (d: %ld)\n", length);
+                printf("Array sorted successfully (length: %ld)\n", length);
             else
                 fprintf(stderr, "The array was not sorted correctly.\n"), print_array(array, length);
         }

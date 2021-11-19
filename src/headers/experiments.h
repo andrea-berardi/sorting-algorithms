@@ -11,7 +11,7 @@ typedef struct {
     ssize_t max_length;
     size_t max_instances;
     ssize_t step;
-    size_t threshold;
+    ssize_t threshold;
     unsigned int seed;
 } Configuration;
 

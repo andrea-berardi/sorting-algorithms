@@ -5,7 +5,7 @@
 #include "../headers/sortingAlgorithms.h"
 
 // Insertion Sort
-void InsertionSort(int array[], size_t length) {
+void InsertionSort(int array[], ssize_t length) {
     for (ssize_t j = 1; j < length; ++j) {
         int key = array[j];
         ssize_t i = j - 1;
@@ -70,9 +70,9 @@ void Merge(int array[], size_t l, size_t c, size_t r) {
 }
 
 // Merge Sort (usage: MergeSort(A, left, right - 1))
-void MergeSort(int array[], size_t l, size_t r) {
+void MergeSort(int array[], ssize_t l, ssize_t r) {
     if (l < r) {
-        size_t c = (l + r) / 2;
+        ssize_t c = (l + r) / 2;
 
         MergeSort(array, l, c);
         MergeSort(array, c + 1, r);
@@ -82,7 +82,7 @@ void MergeSort(int array[], size_t l, size_t r) {
 }
 
 // Adapted Insertion Sort
-void AdaptedInsertionSort(int array[], ssize_t l, size_t r) {
+void AdaptedInsertionSort(int array[], ssize_t l, ssize_t r) {
     for (ssize_t j = l + 1; j < r; ++j) {
         int key = array[j];
         ssize_t i = j - 1;
@@ -97,7 +97,7 @@ void AdaptedInsertionSort(int array[], ssize_t l, size_t r) {
 }
 
 // Hybrid Sort (usage: HybridSort(A, left, right - 1, threshold))
-void HybridSort(int array[], ssize_t l, ssize_t r, const size_t THRESHOLD) {
+void HybridSort(int array[], ssize_t l, ssize_t r, const ssize_t THRESHOLD) {
     if (r - l > THRESHOLD) {
         ssize_t c = (l + r) / 2;
 
@@ -263,7 +263,7 @@ void MedianOfThreeTailQuickSort(int array[], ssize_t l, ssize_t r) {
 }
 
 // Real World Sort (Median Of Three Tail Quick Sort, Heap Sort)
-void RealWorldSort(int array[], ssize_t length, const size_t THRESHOLD) {
+void RealWorldSort(int array[], ssize_t length, const ssize_t THRESHOLD) {
     if (length > THRESHOLD) {
         MedianOfThreeTailQuickSort(array, 0, length);
     } else {
