@@ -127,7 +127,7 @@ long double experiment_tot(ssize_t length, size_t max_instances, unsigned algori
 void
 lab_tot(char file[], ssize_t min_length, ssize_t max_length, size_t max_instances, ssize_t step, const size_t THRESHOLD,
       unsigned seed,
-      const unsigned DEBUG_MODE) {
+      const bool DEBUG_MODE) {
 
     FILE *fp = fopen(file, "w+");
     if (fp == NULL) {
