@@ -4,7 +4,7 @@
 #define SORTING_ALGORITHMS_SORTINGALGORITHMS_H
 
 // Enumeration of the available algorithms
-enum algorithm {
+typedef enum algorithm {
     IS, // Insertion Sort
     MS, // Merge Sort
     HS, // Hybrid Sort (Merge Sort + Adapted Insertion Sort)
@@ -14,7 +14,7 @@ enum algorithm {
     HPS, // Heap Sort
     MTTQS, // Median of Three Tail Quick Sort
     RWS, // Real World Sort (Heap Sort, Tail Recursive Quick Sort, Median of Three Quick Sort)
-};
+} Algorithm;
 
 // IS - Insertion Sort
 void InsertionSort(int array[], size_t length);

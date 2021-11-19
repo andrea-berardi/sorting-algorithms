@@ -7,7 +7,7 @@
 #include "../headers/utils.h"
 
 // Final experiment (it runs all tests)
-long double experiment_tot(ssize_t length, size_t max_instances, unsigned algorithm, const size_t THRESHOLD,
+long double experiment_tot(ssize_t length, size_t max_instances, Algorithm algorithm, const size_t THRESHOLD,
                          const unsigned DEBUG_MODE) {
     clock_t t_tot = 0;
 
