@@ -18,7 +18,7 @@ long double experiment_tot(ssize_t length, size_t max_instances, Algorithm algor
         // we will raise it to 1, to avoid "double free" errors. Why? Because sorting algorithms are meant to be called
         // with "length - 1" and using 0 as a starting point would make the first MergeSort() or HybridSort() call
         // with length equals to - 1.
-        // We don't need to restore length to the correct value because it is copied, not passed by reference.
+        // We don't need to restore length to the correct value because it's copied, not passed by reference.
         // The "real" value is unaffected.
         if (length == 0 && algorithm != IS) ++length;
 
