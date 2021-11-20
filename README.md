@@ -26,16 +26,40 @@ sorting-algorithms
 │  └── Laboratorio 04 - Quick Sort con Tail Recursion ottimizzato.pdf
 ├── README.md
 ├── results
-│  ├── results.csv
-│  └── results.ods
+│  ├── lab_1
+│  │  ├── lab_1.csv
+│  │  ├── lab_1.ods
+│  │  └── lab_1.png
+│  ├── lab_2
+│  │  ├── 2A
+│  │  │  ├── lab_2A.csv
+│  │  │  └── lab_2A.png
+│  │  └── 2B
+│  │     ├── lab_2B.csv
+│  │     └── lab_2B.png
+│  ├── lab_3
+│  │  ├── lab_3.csv
+│  │  └── lab_3.png
+│  ├── lab_4
+│  │  ├── lab_4.csv
+│  │  └── lab_4.png
+│  └── total
+│     ├── total.csv
+│     └── total.png
 └── src
    ├── headers
-   │  ├── experiments.h
+   │  ├── experiments_headers
+   │  │  └── total.h
    │  ├── sortingAlgorithms.h
    │  └── utils.h
    ├── main.c
    └── modules
-      ├── experiments.c
+      ├── experiments
+      │  ├── lab_1.c
+      │  ├── lab_2.c
+      │  ├── lab_3.c
+      │  ├── lab_4.c
+      │  └── total.c
       ├── sortingAlgorithms.c
       └── utils.c
 ```

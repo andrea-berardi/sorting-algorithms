@@ -4,7 +4,7 @@
 
 #include "../../headers/utils.h"
 #include "../../headers/sortingAlgorithms.h"
-#include "../../headers/experiments_headers/total.h"
+#include "../../headers/experiments.h"
 
 // Lab. 1 - Insertion Sort
 long double experiment_1(ssize_t length, size_t max_instances, const unsigned DEBUG_MODE) {

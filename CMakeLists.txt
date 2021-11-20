@@ -3,7 +3,7 @@ project(sorting_algorithms C)
 
 set(CMAKE_C_STANDARD 11)
 
-add_executable(sorting_algorithms src/main.c src/modules/utils.c src/headers/utils.h src/modules/sortingAlgorithms.c src/headers/sortingAlgorithms.h src/modules/experiments/total.c src/headers/experiments_headers/total.h src/modules/experiments/lab_1.c src/modules/experiments/lab_2.c src/modules/experiments/lab_3.c src/modules/experiments/lab_4.c)
+add_executable(sorting_algorithms src/main.c src/modules/utils.c src/headers/utils.h src/modules/sortingAlgorithms.c src/headers/sortingAlgorithms.h src/modules/experiments/experiments.c src/headers/experiments.h src/modules/experiments/lab_1.c src/modules/experiments/lab_2.c src/modules/experiments/lab_3.c src/modules/experiments/lab_4.c)
 
 # This enables runtime sanity checks (this will slow down the executable by a lot!)
 # Currently it is enabled only for debug builds.

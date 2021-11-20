@@ -4,7 +4,7 @@
 #include <stdbool.h>
 
 #include "headers/utils.h"
-#include "headers/experiments_headers/total.h"
+#include "headers/experiments.h"
 
 const bool DEBUG_MODE = false; // this flag toggles debug checks (e.g. it checks if the algorithms sort correctly)
 
