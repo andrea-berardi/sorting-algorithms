@@ -1,6 +1,21 @@
 # Sorting Algorithms
 
-This repository contains a bunch of sorting algorithms and allows to easily test them.
+This repository contains many sorting algorithms and provides an easy and ready to use environment to easily test them.
+
+## Table of Contents
+
+Here's what you'll find on this document:
+
+- [Algorithms currently implemented](#algorithms-currently-implemented)
+- [Project Structure](#project-structure)
+- [Notes](#notes)
+- [Laboratories](#laboratories)
+  - [Lab. 1](#lab-1)
+  - [Lab. 2A](#lab-2a)
+  - [Lab. 2B](#lab-2b)
+  - [Lab. 3](#lab-3)
+  - [Lab. 4](#lab-4)
+  - [Final experiment](#final-experiment)
 
 ## Algorithms currently implemented:
 
