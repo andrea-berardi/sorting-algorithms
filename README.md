@@ -75,3 +75,11 @@ I use CLion as my IDE and Clang as my compiler. The project manager is CMake.
 I tried to keep the algorithms as close as possible to those shown on the book _Introduction to Algorithms and Data Structures_ but it wasn't always possible. Nevertheless, I have **not** used any additional resources apart my professor's PDFs and my tutor's laboratory documentations.
 
 _\*: Unfortunately there's a tiny warning due to my use of `rand()` in the `gen_rand_array()` function. Basically, the IDE is saying that it has limited randomness, which is fine and totally expected. Please ignore._
+
+## Laboratories
+
+**Lab. 1**
+
+Insertion Sort
+
+![Insertion Sort](https://github.com/andrea-berardi/sorting-algorithms/blob/main/results/lab_1/lab_1.png?raw=true)
