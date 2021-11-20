@@ -66,9 +66,9 @@ int main(int argc, char *argv[]) {
     /* Final experiment configurations */
     Configuration final_exp_conf;
     final_exp_conf.min_length = 0; // minimum length of the arrays
-    final_exp_conf.max_length = 10000; // maximum length of the arrays
-    final_exp_conf.max_instances = 10; // how many times to repeat the same test
-    final_exp_conf.step = 100; // the arrays will grow this much at each test
+    final_exp_conf.max_length = 100000; // maximum length of the arrays
+    final_exp_conf.max_instances = 1; // how many times to repeat the same test
+    final_exp_conf.step = 1000; // the arrays will grow this much at each test
     final_exp_conf.threshold = 199; // threshold after which the sorting algorithm changes
     final_exp_conf.seed = 1; // srand()'s starting seed
 
@@ -91,7 +91,7 @@ int main(int argc, char *argv[]) {
         /* Final Experiment that runs all algorithms */
         // Insertion Sort, Merge Sort, Hybrid Sort, Quick Sort, Median of Three Quick Sort,
         // Tail Recursive Quick Sort, Heap Sort, Median of Three Tail Quick Sort, Real World Sort
-        lab_tot("../results/total/results_total.csv", final_exp_conf, DEBUG_MODE);
+        lab_tot("../results/total/total.csv", final_exp_conf, DEBUG_MODE);
     } else {
         fprintf(stderr, "Invalid argument supplied: `%s`\n", argv[1]);
         fprintf(stderr, "Usage: `.%s <1-5>`.\n", argv[0]);
