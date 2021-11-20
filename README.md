@@ -93,6 +93,12 @@ _\*: Unfortunately there's a tiny warning due to my use of `rand()` in the `gen_
 
 ## Laboratories
 
+The following pictures show the performance of the algorithms.
+
+The `X` axis represents dimensions of the arrays that the algorithms sort.
+
+The `Y` axis represents the time it took to sort a particular array. It is calculated using C's `clock()` function, provided by the `time.h` library.
+
 ### Lab. 1
 
 Insertion Sort
