@@ -25,6 +25,9 @@ void lab_2A(char file[], Configuration conf, bool DEBUG_MODE);
 // Lab. 2B - Insertion Sort, Merge Sort
 void lab_2B(char file[], Configuration conf, bool DEBUG_MODE);
 
+// Lab. 3 - Quick Sort, Median of Three Quick Sort
+void lab_3(char file[], Configuration conf, bool DEBUG_MODE);
+
 // Final experiment (it runs all tests)
 void lab_tot(char file[], Configuration, bool DEBUG_MODE);
 

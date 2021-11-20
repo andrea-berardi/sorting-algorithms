@@ -82,7 +82,8 @@ int main(int argc, char *argv[]) {
         /* Lab. 2B - Insertion Sort, Merge Sort, Hybrid Sort */
         lab_2B("../results/lab_2/2B/lab_2B.csv", lab2B_conf, DEBUG_MODE);
     } else if (strcmp(argv[1], "3") == 0) {
-        /* Lab. 3 */
+        /* Lab. 3 - Quick Sort, Median of Three Quick Sort */
+        lab_3("../results/lab_3/lab_3.csv", lab3_conf, DEBUG_MODE);
     } else if (strcmp(argv[1], "4") == 0) {
         /* Lab. 4 */
     } else if (strcmp(argv[1], "5") == 0) {
