@@ -6,8 +6,9 @@
 #include "../../headers/sortingAlgorithms.h"
 #include "../../headers/experiments_headers/total.h"
 
-// Lab. 3 - Quick Sort, Median of Three Quick Sort
-long double experiment_3(ssize_t length, size_t max_instances, Algorithm algorithm, const unsigned DEBUG_MODE) {
+// Lab. 4 - Tail Recursive Quick Sort, Median of Three Tail Quick Sort, Real World Sort
+long double experiment_4(ssize_t length, size_t max_instances, Algorithm algorithm, const ssize_t THRESHOLD,
+                         const unsigned DEBUG_MODE) {
     clock_t t_tot = 0;
 
     for (size_t instance = 1; instance <= max_instances; ++instance) {
@@ -24,17 +25,25 @@ long double experiment_3(ssize_t length, size_t max_instances, Algorithm algorit
         clock_t t_start, t_end;
 
         switch (algorithm) {
-            case QS: {
+            case TQS: {
                 t_start = clock(); // starting processor time stopwatch
-                QuickSort(array, 0, length - 1); // sorting the array
+                TailQuickSort(array, 0, length - 1); // sorting the array
                 t_end = clock();
 
                 break;
             }
 
-            case MTQS: {
+            case MTTQS: {
                 t_start = clock(); // starting processor time stopwatch
-                MedianOfThreeQuickSort(array, 0, length - 1); // sorting the array
+                MedianOfThreeTailQuickSort(array, 0, length - 1); // sorting the array
+                t_end = clock();
+
+                break;
+            }
+
+            case RWS: {
+                t_start = clock(); // starting processor time stopwatch
+                RealWorldSort(array, length - 1, THRESHOLD); // sorting the array
                 t_end = clock();
 
                 break;
@@ -67,22 +76,26 @@ long double experiment_3(ssize_t length, size_t max_instances, Algorithm algorit
     return (long double) t_tot / (long double) max_instances;
 }
 
-void lab_3(char file[], Configuration conf, const bool DEBUG_MODE) {
+void lab_4(char file[], Configuration conf, const bool DEBUG_MODE) {
     FILE *fp = fopen(file, "w+");
     if (fp == NULL) {
         fprintf(stderr, "Failed to open file `%s`\n", file);
         exit(EXIT_FAILURE);
     }
 
-    fprintf(fp, "Dimension (n),Quick Sort,Median of Three Quick Sort\n");
+    fprintf(fp,
+            "Dimension (n),Tail Recursive Quick Sort,Median of Three Tail Quick Sort,Real World Sort\n");
     for (ssize_t length = conf.min_length; length <= conf.max_length; length += conf.step) {
         srand(conf.seed);
-        long double time_QS = experiment_3(length, conf.max_instances, QS, DEBUG_MODE);
+        long double time_TQS = experiment_4(length, conf.max_instances, TQS, conf.threshold, DEBUG_MODE);
 
         srand(conf.seed);
-        long double time_MTQS = experiment_3(length, conf.max_instances, MTQS, DEBUG_MODE);
+        long double time_MTTQS = experiment_4(length, conf.max_instances, MTTQS, conf.threshold, DEBUG_MODE);
 
-        fprintf(fp, "%ld,%Lf,%Lf\n", length, time_QS, time_MTQS); // write to file
+        srand(conf.seed);
+        long double time_RWS = experiment_4(length, conf.max_instances, RWS, conf.threshold, DEBUG_MODE);
+
+        fprintf(fp, "%ld,%Lf,%Lf,%Lf\n", length, time_TQS, time_MTTQS, time_RWS); // write to file
 
         ++conf.seed;
     }

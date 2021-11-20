@@ -4,7 +4,7 @@
 #include <stdbool.h>
 
 #include "headers/utils.h"
-#include "headers/experiments_headers/experiments.h"
+#include "headers/experiments_headers/total.h"
 
 const bool DEBUG_MODE = false; // this flag toggles debug checks (e.g. it checks if the algorithms sort correctly)
 
@@ -57,10 +57,10 @@ int main(int argc, char *argv[]) {
     /* Lab. 4 configurations */
     Configuration lab4_conf;
     lab4_conf.min_length = 0; // minimum length of the arrays
-    lab4_conf.max_length = 50000; // maximum length of the arrays
-    lab4_conf.max_instances = 100; // how many times to repeat the same test
+    lab4_conf.max_length = 100000; // maximum length of the arrays
+    lab4_conf.max_instances = 1; // how many times to repeat the same test
     lab4_conf.step = 1000; // the arrays will grow this much at each test
-    lab4_conf.threshold = 199; // threshold after which the sorting algorithm changes
+    lab4_conf.threshold = 10000; // threshold after which the sorting algorithm changes
     lab4_conf.seed = 10; // srand()'s starting seed
 
     /* Final experiment configurations */
@@ -85,12 +85,13 @@ int main(int argc, char *argv[]) {
         /* Lab. 3 - Quick Sort, Median of Three Quick Sort */
         lab_3("../results/lab_3/lab_3.csv", lab3_conf, DEBUG_MODE);
     } else if (strcmp(argv[1], "4") == 0) {
-        /* Lab. 4 */
+        /* // Lab. 4 - Tail Recursive Quick Sort, Median of Three Tail Quick Sort, Real World Sort */
+        lab_4("../results/lab_4/lab_4.csv", lab4_conf, DEBUG_MODE);
     } else if (strcmp(argv[1], "5") == 0) {
         /* Final Experiment that runs all algorithms */
         // Insertion Sort, Merge Sort, Hybrid Sort, Quick Sort, Median of Three Quick Sort,
         // Tail Recursive Quick Sort, Heap Sort, Median of Three Tail Quick Sort, Real World Sort
-        lab_tot("../results/results_total.csv", final_exp_conf, DEBUG_MODE);
+        lab_tot("../results/total/results_total.csv", final_exp_conf, DEBUG_MODE);
     } else {
         fprintf(stderr, "Invalid argument supplied: `%s`\n", argv[1]);
         fprintf(stderr, "Usage: `.%s <1-5>`.\n", argv[0]);
