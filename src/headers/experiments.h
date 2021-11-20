@@ -15,6 +15,9 @@ typedef struct {
     unsigned int seed;
 } Configuration;
 
+// Lab. 1 - Insertion Sort
+void lab_1(char file[], Configuration conf, bool DEBUG_MODE);
+
 // Final experiment (it runs all tests)
 void lab_tot(char file[], Configuration, bool DEBUG_MODE);
 
