@@ -28,7 +28,6 @@ sorting-algorithms
 ├── results
 │  ├── lab_1
 │  │  ├── lab_1.csv
-│  │  ├── lab_1.ods
 │  │  └── lab_1.png
 │  ├── lab_2
 │  │  ├── 2A
@@ -48,18 +47,17 @@ sorting-algorithms
 │     └── total.png
 └── src
    ├── headers
-   │  ├── experiments_headers
-   │  │  └── total.h
+   │  ├── experiments.h
    │  ├── sortingAlgorithms.h
    │  └── utils.h
    ├── main.c
    └── modules
       ├── experiments
+      │  ├── experiments.c
       │  ├── lab_1.c
       │  ├── lab_2.c
       │  ├── lab_3.c
-      │  ├── lab_4.c
-      │  └── total.c
+      │  └── lab_4.c
       ├── sortingAlgorithms.c
       └── utils.c
 ```
