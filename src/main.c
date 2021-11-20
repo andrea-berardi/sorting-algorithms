@@ -11,9 +11,9 @@ const bool DEBUG_MODE = false; // this flag toggles debug checks (e.g. it checks
 int main(int argc, char *argv[]) {
     if (argc != 2) {
         fprintf(stderr, "Wrong number of arguments supplied.\n");
+        fprintf(stderr, "Usage: `.%s <1-5>`.\n", argv[0]);
         fprintf(stderr, "Please specify which test you want to run:\n");
         fprintf(stderr, "1) Lab. 1\n2) Lab. 2\n3) Lab. 3\n4) Lab. 4\n5) Everything\n");
-        fprintf(stderr, "Usage: `.%s <1-5>`.\n", argv[0]);
 
         exit(EXIT_FAILURE);
     }
@@ -79,9 +79,9 @@ int main(int argc, char *argv[]) {
         lab_tot("../results/results_total.csv", final_exp_conf, DEBUG_MODE);
     } else {
         fprintf(stderr, "Invalid argument supplied\n");
+        fprintf(stderr, "Usage: `.%s <1-5>`.\n", argv[0]);
         fprintf(stderr, "Please specify which test you want to run:\n");
         fprintf(stderr, "1) Lab. 1\n2) Lab. 2\n3) Lab. 3\n4) Lab. 4\n5) Everything\n");
-        fprintf(stderr, "Usage: `.%s <1-5>`.\n", argv[0]);
 
         exit(EXIT_FAILURE);
     }
