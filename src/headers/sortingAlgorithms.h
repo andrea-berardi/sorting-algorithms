@@ -4,16 +4,16 @@
 #define SORTING_ALGORITHMS_SORTINGALGORITHMS_H
 
 // Enumeration of the available algorithms
-typedef enum algorithm {
-    IS, // Insertion Sort
-    MS, // Merge Sort
-    HS, // Hybrid Sort (Merge Sort + Adapted Insertion Sort)
-    QS, // Quick Sort
-    MTQS, // Median of Three Quick Sort
-    TQS, // Tail Recursive Quick Sort
-    HPS, // Heap Sort
-    MTTQS, // Median of Three Tail Quick Sort
-    RWS, // Real World Sort (Heap Sort, Tail Recursive Quick Sort, Median of Three Quick Sort)
+typedef enum algorithms {
+    IS = 0, // Insertion Sort (0)
+    MS = 1, // Merge Sort (1)
+    HS = 2, // Hybrid Sort (Merge Sort + Adapted Insertion Sort) (2)
+    QS = 3, // Quick Sort (3)
+    MTQS = 4, // Median of Three Quick Sort (4)
+    TQS = 5, // Tail Recursive Quick Sort (5)
+    HPS = 6, // Heap Sort (6)
+    MTTQS = 7, // Median of Three Tail Quick Sort (7)
+    RWS = 8, // Real World Sort (Heap Sort, Tail Recursive Quick Sort, Median of Three Quick Sort) (8)
 } Algorithm;
 
 // IS - Insertion Sort

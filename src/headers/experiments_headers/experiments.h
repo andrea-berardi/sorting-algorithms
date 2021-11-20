@@ -3,6 +3,7 @@
 #ifndef SORTING_ALGORITHMS_EXPERIMENTS_H
 #define SORTING_ALGORITHMS_EXPERIMENTS_H
 
+#include <stdlib.h>
 #include <stdbool.h>
 
 // Configuration
@@ -17,6 +18,12 @@ typedef struct {
 
 // Lab. 1 - Insertion Sort
 void lab_1(char file[], Configuration conf, bool DEBUG_MODE);
+
+// Lab. 2A - Insertion Sort, Merge Sort
+void lab_2A(char file[], Configuration conf, bool DEBUG_MODE);
+
+// Lab. 2B - Insertion Sort, Merge Sort
+void lab_2B(char file[], Configuration conf, bool DEBUG_MODE);
 
 // Final experiment (it runs all tests)
 void lab_tot(char file[], Configuration, bool DEBUG_MODE);

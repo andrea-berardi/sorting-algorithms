@@ -24,19 +24,8 @@ void Merge(int array[], size_t l, size_t c, size_t r) {
     size_t n1 = c - l + 1;
     size_t n2 = r - c;
 
-    int *left = malloc(n1 * sizeof(int));
-    if (left == NULL) {
-        fprintf(stderr, "Error: couldn't allocate %zu-cells array, size: %zu bytes).\n", n1,
-                n1 * sizeof(int));
-        exit(EXIT_FAILURE);
-    }
-
-    int *right = malloc(n2 * sizeof(int));
-    if (right == NULL) {
-        fprintf(stderr, "Error: couldn't allocate %zu-cells array, size: %zu bytes).\n", n2,
-                n2 * sizeof(int));
-        exit(EXIT_FAILURE);
-    }
+    int *left = new_array(n1); // errors are handled by the new_array() function
+    int *right = new_array(n2); // errors are handled by the new_array() function
 
     for (size_t i = 0; i < n1; ++i) left[i] = array[l + i];
     for (size_t j = 0; j < n2; ++j) right[j] = array[(c + 1) + j];
@@ -268,6 +257,6 @@ void RealWorldSort(int array[], ssize_t length, const ssize_t THRESHOLD) {
         MedianOfThreeTailQuickSort(array, 0, length);
     } else {
         // this would actually run faster with Insertion Sort, on my machine
-        HeapSort(array, length);
+        HeapSort(array, length + 1);
     }
 }

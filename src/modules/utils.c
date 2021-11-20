@@ -3,7 +3,19 @@
 
 #include "../headers/utils.h"
 
-// Generate a random array, given its length
+// Generate a new, uninitialized, array of integers, given its length
+int *new_array(const size_t length) {
+    int *array = malloc(length * sizeof(int));
+    if (array == NULL) {
+        fprintf(stderr, "Error: couldn't allocate %zu-cells array, size: %zu bytes).\n", length,
+                length * sizeof(int));
+        exit(EXIT_FAILURE);
+    }
+
+    return array;
+}
+
+// Generate a new random array, given its length
 int *gen_rnd_array(const size_t length) {
     int *array = malloc(length * sizeof(int));
     if (array == NULL) {
