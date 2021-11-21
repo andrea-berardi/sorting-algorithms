@@ -22,7 +22,7 @@ void lab_1(char file[], Configuration conf, bool DEBUG_MODE);
 // Lab. 2A - Insertion Sort, Merge Sort
 void lab_2A(char file[], Configuration conf, bool DEBUG_MODE);
 
-// Lab. 2B - Insertion Sort, Merge Sort
+// Lab. 2B - Insertion Sort, Merge Sort, Hybrid Sort
 void lab_2B(char file[], Configuration conf, bool DEBUG_MODE);
 
 // Lab. 3 - Quick Sort, Median of Three Quick Sort
