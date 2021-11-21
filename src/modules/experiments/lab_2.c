@@ -91,7 +91,7 @@ void lab_2A(char file[], Configuration conf, const bool DEBUG_MODE) {
         fprintf(stderr, "Failed to flush buffered data on `%s`\n", file);
 }
 
-// Final experiment (it runs all tests)
+// Lab. 2B - Insertion Sort, Merge Sort, Hybrid Sort
 long double experiment_2B(ssize_t length, size_t max_instances, Algorithm algorithm, const ssize_t THRESHOLD,
                           const unsigned DEBUG_MODE) {
     clock_t t_tot = 0;
