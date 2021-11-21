@@ -1,6 +1,6 @@
 # Sorting Algorithms
 
-This repository contains many sorting algorithms and provides an easy and ready to use environment to easily test them.
+This repository contains many sorting algorithms and provides a ready to use environment to easily test them.
 
 ## Table of Contents
 
