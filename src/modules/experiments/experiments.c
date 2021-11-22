@@ -26,73 +26,73 @@ long double experiment_tot(ssize_t length, size_t max_instances, Algorithm algor
 
         switch (algorithm) {
             case IS: {
-                t_start = clock(); // starting processor time stopwatch
+                t_start = clock(); // starting processor time "stopwatch"
                 InsertionSort(array, length); // sorting the array
-                t_end = clock();
+                t_end = clock(); // stopping the processor time "stopwatch"
 
                 break;
             }
 
             case MS: {
-                t_start = clock(); // starting processor time stopwatch
+                t_start = clock(); // starting processor time "stopwatch"
                 MergeSort(array, 0, length - 1); // sorting the array
-                t_end = clock();
+                t_end = clock(); // stopping the processor time "stopwatch"
 
                 break;
             }
 
             case HS: {
-                t_start = clock(); // starting processor time stopwatch
+                t_start = clock(); // starting processor time "stopwatch"
                 HybridSort(array, 0, length - 1, THRESHOLD); // sorting the array
-                t_end = clock();
+                t_end = clock(); // stopping the processor time "stopwatch"
 
                 break;
             }
 
             case QS: {
-                t_start = clock(); // starting processor time stopwatch
+                t_start = clock(); // starting processor time "stopwatch"
                 QuickSort(array, 0, length - 1); // sorting the array
-                t_end = clock();
+                t_end = clock(); // stopping the processor time "stopwatch"
 
                 break;
             }
 
             case MTQS: {
-                t_start = clock(); // starting processor time stopwatch
+                t_start = clock(); // starting processor time "stopwatch"
                 MedianOfThreeQuickSort(array, 0, length - 1); // sorting the array
-                t_end = clock();
+                t_end = clock(); // stopping the processor time "stopwatch"
 
                 break;
             }
 
             case TQS: {
-                t_start = clock(); // starting processor time stopwatch
+                t_start = clock(); // starting processor time "stopwatch"
                 TailQuickSort(array, 0, length - 1); // sorting the array
-                t_end = clock();
+                t_end = clock(); // stopping the processor time "stopwatch"
 
                 break;
             }
 
             case HPS: {
-                t_start = clock(); // starting processor time stopwatch
+                t_start = clock(); // starting processor time "stopwatch"
                 HeapSort(array, length); // sorting the array
-                t_end = clock();
+                t_end = clock(); // stopping the processor time "stopwatch"
 
                 break;
             }
 
             case MTTQS: {
-                t_start = clock(); // starting processor time stopwatch
+                t_start = clock(); // starting processor time "stopwatch"
                 MedianOfThreeTailQuickSort(array, 0, length - 1); // sorting the array
-                t_end = clock();
+                t_end = clock(); // stopping the processor time "stopwatch"
 
                 break;
             }
 
             case RWS: {
-                t_start = clock(); // starting processor time stopwatch
+                t_start = clock(); // starting processor time "stopwatch"
                 RealWorldSort(array, length - 1, THRESHOLD); // sorting the array
-                t_end = clock();
+                t_end = clock(); // stopping the processor time "stopwatch"
 
                 break;
             }
