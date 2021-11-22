@@ -74,6 +74,7 @@ void Merge(int array[], size_t l, size_t c, size_t r) {
 // Then we recursively call MergeSort() to further divide the sub-sequences
 // until the initial `if` is no longer true. We then start merging these
 // arrays using the Merge procedure.
+// Merge Sort is a "divide-and-conquer" algorithm.
 void MergeSort(int array[], ssize_t l, ssize_t r) {
     if (l < r) {
         ssize_t c = (l + r) / 2;
@@ -121,6 +122,10 @@ void HybridSort(int array[], ssize_t l, ssize_t r, const ssize_t THRESHOLD) {
 }
 
 /* Partition */
+// Partition selects a pivot that is typically the last element in the array (x = A[r]).
+// The algorithm maintains index i as it scans the array using another index j
+// such that the elements at lo through i-1 (inclusive) are less than the pivot, and the elements
+// at i through j (inclusive) are equal to or greater than the pivot.
 ssize_t Partition(int array[], ssize_t l, ssize_t r) {
     int x = array[r];
     ssize_t i = l - 1;
@@ -137,7 +142,13 @@ ssize_t Partition(int array[], ssize_t l, ssize_t r) {
     return i + 1;
 }
 
-// Quick Sort (usage: QuickSort(A, left, right - 1))
+/* Quick Sort (usage: QuickSort(A, left, right - 1)) */
+// Firstly, the Partition procedure divides the array into two consecutive non-empty
+// sub-ranges, so that no element of the first sub-range is greater than any element
+// of the second sub-range. After applying this partition, Quick Sort recursively
+// sorts the sub-ranges, after excluding from them an element at the point of
+// division that is known to be already in its correct location.
+// Quick Sort is a "divide-and-conquer" algorithm.
 void QuickSort(int array[], ssize_t l, ssize_t r) {
     if (l < r) {
         ssize_t q = Partition(array, l, r);
@@ -147,9 +158,13 @@ void QuickSort(int array[], ssize_t l, ssize_t r) {
     }
 }
 
-// Median of Three: Hardcoded procedure to find the median of three array values
+/* Median of Three */
+// Hardcoded procedure to find the median of three (array) values.
+// We're doing this in order to get a better balanced Partition,
+// instead of selecting the last element (r) no matter what.
 ssize_t MedianOfThree(const int array[], ssize_t i, ssize_t j, ssize_t k) {
-    // ^ is the bitwise XOR operator
+    // ^ is the bitwise XOR (exclusive or) operator
+    // It is true only if its arguments differ.
     if ((array[i] > array[j]) ^ (array[i] > array[k])) {
         return i;
     } else if ((array[j] < i) ^ (array[j] < array[k])) {
@@ -159,7 +174,11 @@ ssize_t MedianOfThree(const int array[], ssize_t i, ssize_t j, ssize_t k) {
     }
 }
 
-// Median of Three Partition
+/* Median of Three Partition */
+// Adapted version of Partition, that simply selects the median of three
+// elements instead of choosing the rightest one no matter what.
+// This should give better performances because it creates a generally
+// better balanced partition.
 ssize_t MedianOfThreePartition(int array[], ssize_t l, ssize_t r) {
     ssize_t s = MedianOfThree(array, l, r, (l + r) / 2);
     swap(&array[s], &array[r]);
@@ -179,7 +198,10 @@ ssize_t MedianOfThreePartition(int array[], ssize_t l, ssize_t r) {
     return i + 1;
 }
 
-// Median of Three Quick Sort (usage MedianOfThreeQuickSort(array, left, right - 1))
+/* Median of Three Quick Sort (usage MedianOfThreeQuickSort(array, left, right - 1)) */
+// Adapted version of Quick Sort that takes advantage of the
+// "Median of Three Partition" optimization. At this point, there
+// are no practical differences from the standard Quick Sort.
 void MedianOfThreeQuickSort(int array[], ssize_t l, ssize_t r) {
     if (l < r) {
         ssize_t q = MedianOfThreePartition(array, l, r);
@@ -189,7 +211,15 @@ void MedianOfThreeQuickSort(int array[], ssize_t l, ssize_t r) {
     }
 }
 
-// Tail Recursive Quick Sort
+/* Tail Recursive Quick Sort */
+// This alternative version of Quick Sort places the recursive
+// call at the end of the procedure, hinting the compiler to
+// optimize the generated machine-code into an iteration, rather than
+// a recursive call. This prevents stack's overflows and gives better
+// performances. Unfortunately, at this point, the compilers are so smart
+// that this does not seem to be necessary, as this basically produces (almost)
+//  the same machine-code as the recursive version and there aren't big
+// performance improvements.
 void TailQuickSort(int array[], ssize_t l, ssize_t r) {
     while (l < r) {
         ssize_t q = Partition(array, l, r);
@@ -200,22 +230,30 @@ void TailQuickSort(int array[], ssize_t l, ssize_t r) {
     }
 }
 
-// Heap - Parent
+/* Heap - Parent */
+// This simple function returns the index of the parent of
+// `i`. This is possible because we see heaps as binary trees.
+// Since this function is unused it's commented out.
 // size_t Parent(size_t i) {
 //     return i / 2;
 // }
 
-// Heap - Left branch
+/* Heap - Left branch */
+// This procedure returns the index of the left "son" (branch)
+// of a given heap with root `i`.
 ssize_t Left(ssize_t i) {
     return 2 * i;
 }
 
-// Heap - Right branch
+/* Heap - Right branch */
+// This procedure returns the index of the right "son" (branch)
+// of a given heap with root `i`.
 ssize_t Right(ssize_t i) {
     return 2 * i + 1;
 }
 
-// Heap - Max-Heapify
+/* Heap - Max-Heapify */
+// ...
 void MaxHeapify(int array[], ssize_t i, ssize_t HeapSize, ssize_t length) {
     ssize_t l = Left(i);
     ssize_t r = Right(i);
