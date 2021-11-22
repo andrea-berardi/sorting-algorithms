@@ -253,7 +253,13 @@ ssize_t Right(ssize_t i) {
 }
 
 /* Heap - Max-Heapify */
-// ...
+// This procedure is meant to maintain the "max-heap" property.
+// It assumes that the binary trees rooted at Left(i) and Right(i)
+// are max-heaps, but that A[i] might be smaller than its children,
+// thus violating the max-heap property.
+// MaxHeapify() lets the value at A[i] move down in the heap, in
+// order to get a subtree, rooted at index `i`, that follows
+// the max-heap property.
 void MaxHeapify(int array[], ssize_t i, ssize_t HeapSize, ssize_t length) {
     ssize_t l = Left(i);
     ssize_t r = Right(i);
@@ -277,7 +283,9 @@ void MaxHeapify(int array[], ssize_t i, ssize_t HeapSize, ssize_t length) {
     }
 }
 
-// Heap - Build-Max-Heap
+/* Heap - Build-Max-Heap */
+// This procedure goes through the remaining nodes of the binary
+// tree and applies MaxHeapify() on each one.
 void BuildMaxHeap(int array[], ssize_t length) {
     ssize_t HeapSize = length;
     for (ssize_t i = length / 2; i >= 0; --i) {
@@ -285,7 +293,13 @@ void BuildMaxHeap(int array[], ssize_t length) {
     }
 }
 
-// HeapSort
+/* HeapSort */
+// This procedure starts by using BuildMaxHeap() to... build a max-heap
+// on the input array. The maximum element of the array is sored at the root
+// A[0] and can be places in its correct position. by swapping it with A[i].
+// Unfortunately, even if the children of the root is still a max-heap, the new
+// root might not maintain that property. In order to restore this property
+// we simply need to call MaxHeapify().
 void HeapSort(int array[], ssize_t length) {
     if (length < 2) return; // there's no reason to sort an empty or single-element array
 
@@ -299,7 +313,10 @@ void HeapSort(int array[], ssize_t length) {
     }
 }
 
-// Median of Three Tail Quick Sort
+/* Median of Three Tail Quick Sort */
+// This variation of Quick Sort implements two different optimizations:
+// the median of three partition and the tail-recursive call to itself, in
+// order to get both better balances partitions and better optimized code.
 void MedianOfThreeTailQuickSort(int array[], ssize_t l, ssize_t r) {
     while (l < r) {
         ssize_t q = Partition(array, l, r);
@@ -310,7 +327,11 @@ void MedianOfThreeTailQuickSort(int array[], ssize_t l, ssize_t r) {
     }
 }
 
-// Real World Sort (Median Of Three Tail Quick Sort, Heap Sort)
+/* Real World Sort (Median Of Three Tail Quick Sort, Heap Sort) */
+// This made-up algorithm uses a particular version of Quick Sort for
+// arrays longer than a given value, and uses Heap Sort for arrays
+// shorter than that, to take advantage of Heap Sort's good performance
+// with relatively short arrays.
 void RealWorldSort(int array[], ssize_t length, const ssize_t THRESHOLD) {
     if (length > THRESHOLD) {
         MedianOfThreeTailQuickSort(array, 0, length);
