@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
-#include <stdbool.h>
+#include <string.h> // required for strcmp()
+#include <stdbool.h> // required to use idiomatically the boolean type
 
 #include "headers/experiments.h"
 
