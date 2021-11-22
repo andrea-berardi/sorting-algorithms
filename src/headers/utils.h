@@ -1,10 +1,10 @@
-#include <stdlib.h> // in order to get the `size_t` type
-#include <stdbool.h> // imports the boolean type for more idiomatic code
-
 // Header guards:
 // patterns of preprocessor directives that protect a header from being included multiple times
 #ifndef SORTING_ALGORITHMS_UTILS_H
 #define SORTING_ALGORITHMS_UTILS_H
+
+#include <stdlib.h> // in order to get the `size_t` type
+#include <stdbool.h> // imports the boolean type for more idiomatic code
 
 // Generate a new, uninitialized, array of integers, given its length
 int *new_array(size_t length);
