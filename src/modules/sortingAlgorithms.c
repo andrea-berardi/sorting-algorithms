@@ -4,7 +4,11 @@
 #include "../headers/utils.h"
 #include "../headers/sortingAlgorithms.h"
 
-// Insertion Sort
+/* Insertion Sort */
+// At each iteration Insertion Sort picks one element from the array,
+// finds its correct location, and inserts it there. The remaining
+// elements are arranged in the inner `while` loop, that moves them
+// while positioning the "key".
 void InsertionSort(int array[], ssize_t length) {
     for (ssize_t j = 1; j < length; ++j) {
         int key = array[j];
@@ -19,7 +23,13 @@ void InsertionSort(int array[], ssize_t length) {
     }
 }
 
-// Merge procedure
+/* Merge procedure */
+// This procedure merges to sorted sequences.
+// We merge by calling this auxiliary procedure `Merge(A, l, c, r)`, where A is
+// our array and l, c, and r are indices into the array such that l <= c < r.
+// The procedure assumes that the sub-arrays A[l..c] and A[c+1..r] are in sorted order.
+// It merges them to form a single sorted subarray that replaces the current subarray A[l..r].
+// Since we're creating these auxiliary arrays, we can't consider Merge Sort to be "in place".
 void Merge(int array[], size_t l, size_t c, size_t r) {
     size_t n1 = c - l + 1;
     size_t n2 = r - c;
@@ -52,13 +62,18 @@ void Merge(int array[], size_t l, size_t c, size_t r) {
         }
     }
 
-    free(left);
+    free(left); // it's necessary to give back to the OS the heap-memory we have allocated
     left = NULL;
-    free(right);
+    free(right); // it's necessary to give back to the OS the heap-memory we have allocated
     right = NULL;
 }
 
-// Merge Sort (usage: MergeSort(A, left, right - 1))
+/* Merge Sort (usage: MergeSort(A, left, right - 1)) */
+// If the left index is smaller than the right one, we compute the
+// element in between and use it as an index for the Merge procedure.
+// Then we recursively call MergeSort() to further divide the sub-sequences
+// until the initial `if` is no longer true. We then start merging these
+// arrays using the Merge procedure.
 void MergeSort(int array[], ssize_t l, ssize_t r) {
     if (l < r) {
         ssize_t c = (l + r) / 2;
@@ -70,7 +85,9 @@ void MergeSort(int array[], ssize_t l, ssize_t r) {
     }
 }
 
-// Adapted Insertion Sort
+/* Adapted Insertion Sort */
+// This procedure is an adapted version of Insertion Sort, that
+// simply allows specifying which range of the array we want to sort.
 void AdaptedInsertionSort(int array[], ssize_t l, ssize_t r) {
     for (ssize_t j = l + 1; j < r; ++j) {
         int key = array[j];
@@ -85,7 +102,11 @@ void AdaptedInsertionSort(int array[], ssize_t l, ssize_t r) {
     }
 }
 
-// Hybrid Sort (usage: HybridSort(A, left, right - 1, threshold))
+/* Hybrid Sort (usage: HybridSort(A, left, right - 1, threshold)) */
+// This is an adapted version of Merge Sort that allows to use Insertion Sort
+// on small arrays, in order to take advantage of the good performances of
+// the latter on small sequences. This does not change the asymptotic behavior
+// of the algorithm, but it's a very effective heuristic.
 void HybridSort(int array[], ssize_t l, ssize_t r, const ssize_t THRESHOLD) {
     if (r - l > THRESHOLD) {
         ssize_t c = (l + r) / 2;
@@ -99,7 +120,7 @@ void HybridSort(int array[], ssize_t l, ssize_t r, const ssize_t THRESHOLD) {
     }
 }
 
-// Partition
+/* Partition */
 ssize_t Partition(int array[], ssize_t l, ssize_t r) {
     int x = array[r];
     ssize_t i = l - 1;
