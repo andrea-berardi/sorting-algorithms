@@ -3,8 +3,8 @@
 #include <stdlib.h>
 
 #include "../../headers/utils.h"
-#include "../../headers/sortingAlgorithms.h"
 #include "../../headers/experiments.h"
+#include "../../headers/sortingAlgorithms.h"
 
 // Final experiment (it runs all tests)
 long double experiment_tot(ssize_t length, size_t max_instances, Algorithm algorithm, const ssize_t THRESHOLD,

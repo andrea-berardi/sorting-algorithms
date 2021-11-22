@@ -3,8 +3,8 @@
 #include <time.h>
 
 #include "../../headers/utils.h"
-#include "../../headers/sortingAlgorithms.h"
 #include "../../headers/experiments.h"
+#include "../../headers/sortingAlgorithms.h"
 
 // Lab. 4 - Tail Recursive Quick Sort, Median of Three Tail Quick Sort, Real World Sort
 long double experiment_4(ssize_t length, size_t max_instances, Algorithm algorithm, const ssize_t THRESHOLD,

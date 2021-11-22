@@ -3,8 +3,8 @@
 #include <stdlib.h>
 
 #include "../../headers/utils.h"
-#include "../../headers/sortingAlgorithms.h"
 #include "../../headers/experiments.h"
+#include "../../headers/sortingAlgorithms.h"
 
 // Lab. 1 - Insertion Sort
 long double experiment_1(ssize_t length, size_t max_instances, const unsigned DEBUG_MODE) {
