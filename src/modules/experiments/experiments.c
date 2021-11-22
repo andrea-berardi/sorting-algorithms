@@ -1,6 +1,6 @@
+#include <time.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h>
 
 #include "../../headers/utils.h"
 #include "../../headers/sortingAlgorithms.h"
