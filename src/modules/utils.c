@@ -32,12 +32,14 @@ int *gen_rnd_array(const size_t length) {
 
 // Swap two integers of an array using pointers
 void swap(int *a, int *b) {
-    int tmp = *a;
+    int tmp = *a; // this temporary variable stores the value of `a` before we overwrite it with `b`
     *a = *b;
     *b = tmp;
 }
 
 // Check if a given array is sorted (ascending order)
+// This is an antagonist function that ensures that
+// the sorting algorithms work properly.
 bool is_sorted(const int array[], size_t length) {
     for (size_t i = 1; i < length; ++i)
         if (array[i - 1] > array[i])
