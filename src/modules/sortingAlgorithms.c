@@ -307,7 +307,7 @@ void HeapSort(int array[], ssize_t length) {
 // order to get both better balances partitions and better optimized code.
 void MedianOfThreeTailQuickSort(int array[], ssize_t l, ssize_t r) {
     while (l < r) {
-        ssize_t q = Partition(array, l, r);
+        ssize_t q = MedianOfThreePartition(array, l, r);
 
         MedianOfThreeTailQuickSort(array, l, q - 1);
 
@@ -325,7 +325,7 @@ void HybridTailMedianOfThreeQuickSort(int array[], ssize_t l, ssize_t r, const s
         AdaptedInsertionSort(array, l, r);
     } else {
         while (l < r) {
-            ssize_t c = MedianOfThreePartition(array, l, r);
+            ssize_t c = MedianOfThreePartition(array, l, r - 1);
 
             MedianOfThreeTailQuickSort(array, l, c - 1);
 
