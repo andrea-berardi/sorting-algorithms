@@ -13,7 +13,7 @@ typedef enum algorithms {
     TQS = 5, // Tail Recursive Quick Sort (5)
     HPS = 6, // Heap Sort (6)
     MTTQS = 7, // Median of Three Tail Quick Sort (7)
-    RWS = 8, // Real World Sort (Heap Sort, Tail Recursive Quick Sort, Median of Three Quick Sort) (8)
+    HMTTQS = 8, // Hybrid Median of Three Tail Recursive Quick Sort (Insertion Sort, Median of Three Tail Recursive Quick Sort (8)
 } Algorithm;
 
 // IS - Insertion Sort
@@ -40,7 +40,7 @@ void HeapSort(int array[], ssize_t length);
 // MTTQS - Median of Three Tail Quick Sort
 void MedianOfThreeTailQuickSort(int array[], ssize_t l, ssize_t r);
 
-// RWS - Hybrid Tail Recursive Median of Three Quick Sort
+// HMTTQS - Hybrid Tail Recursive Median of Three Quick Sort
 void HybridTailMedianOfThreeQuickSort(int array[], ssize_t l, ssize_t r, ssize_t THRESHOLD);
 
 #endif //SORTING_ALGORITHMS_SORTINGALGORITHMS_H

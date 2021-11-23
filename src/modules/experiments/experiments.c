@@ -89,7 +89,7 @@ long double experiment_tot(ssize_t length, size_t max_instances, Algorithm algor
                 break;
             }
 
-            case RWS: {
+            case HMTTQS: {
                 t_start = clock(); // starting processor time "stopwatch"
                 HybridTailMedianOfThreeQuickSort(array, 0, length - 1, THRESHOLD); // sorting the array
                 t_end = clock(); // stopping the processor time "stopwatch"
@@ -132,7 +132,7 @@ void lab_tot(char file[], Configuration conf, const bool DEBUG_MODE) {
     }
 
     fprintf(fp,
-            "Dimension (n),Insertion Sort,Merge Sort,Hybrid Sort,Quick Sort,Median of Three Quick Sort,Tail Recursive Quick Sort,Heap Sort,Median of Three Tail Quick Sort,Real World Sort\n");
+            "Dimension (n),Insertion Sort,Merge Sort,Hybrid Sort,Quick Sort,Median of Three Quick Sort,Tail Recursive Quick Sort,Heap Sort,Median of Three Tail Quick Sort,Tail Recursive Quick Sort, Median of Three Tail Quick Sort,Hybrid Tail Recursive Median of Three Quick Sort\n");
     for (ssize_t length = conf.min_length; length <= conf.max_length; length += conf.step) {
         srand(conf.seed);
         long double time_IS = experiment_tot(length, conf.max_instances, IS, conf.threshold, DEBUG_MODE);
@@ -159,10 +159,10 @@ void lab_tot(char file[], Configuration conf, const bool DEBUG_MODE) {
         long double time_MTTQS = experiment_tot(length, conf.max_instances, MTTQS, conf.threshold, DEBUG_MODE);
 
         srand(conf.seed);
-        long double time_RWS = experiment_tot(length, conf.max_instances, RWS, conf.threshold, DEBUG_MODE);
+        long double time_HMTTQS = experiment_tot(length, conf.max_instances, HMTTQS, conf.threshold, DEBUG_MODE);
 
         fprintf(fp, "%ld,%Lf,%Lf,%Lf,%Lf,%Lf,%Lf,%Lf,%Lf,%Lf\n", length, time_IS, time_MS, time_HS, time_QS,
-                time_MTQS, time_TQS, time_HPS, time_MTTQS, time_RWS); // write to file
+                time_MTQS, time_TQS, time_HPS, time_MTTQS, time_HMTTQS); // write to file
 
         ++conf.seed;
     }

@@ -84,7 +84,7 @@ int main(int argc, char *argv[]) {
         /* Lab. 3 - Quick Sort, Median of Three Quick Sort */
         lab_3("../results/lab_3/lab_3.csv", lab3_conf, DEBUG_MODE);
     } else if (strcmp(argv[1], "4") == 0) {
-        /* // Lab. 4 - Tail Recursive Quick Sort, Median of Three Tail Quick Sort, Real World Sort */
+        /* Lab. 4 - Tail Recursive Quick Sort, Median of Three Tail Quick Sort, Hybrid Tail Recursive Median of Three Quick Sort */
         lab_4("../results/lab_4/lab_4.csv", lab4_conf, DEBUG_MODE);
     } else if (strcmp(argv[1], "5") == 0) {
         /* Final Experiment that runs all algorithms */

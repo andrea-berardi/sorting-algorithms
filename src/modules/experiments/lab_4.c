@@ -41,7 +41,7 @@ long double experiment_4(ssize_t length, size_t max_instances, Algorithm algorit
                 break;
             }
 
-            case RWS: {
+            case HMTTQS: {
                 t_start = clock(); // starting processor time stopwatch
                 HybridTailMedianOfThreeQuickSort(array, 0, length - 1, THRESHOLD); // sorting the array
                 t_end = clock();
@@ -84,7 +84,7 @@ void lab_4(char file[], Configuration conf, const bool DEBUG_MODE) {
     }
 
     fprintf(fp,
-            "Dimension (n),Tail Recursive Quick Sort,Median of Three Tail Quick Sort,Real World Sort\n");
+            "Dimension (n),Tail Recursive Quick Sort,Median of Three Tail Quick Sort,Hybrid Tail Recursive Median of Three Quick Sort\n");
     for (ssize_t length = conf.min_length; length <= conf.max_length; length += conf.step) {
         srand(conf.seed);
         long double time_TQS = experiment_4(length, conf.max_instances, TQS, conf.threshold, DEBUG_MODE);
@@ -93,9 +93,9 @@ void lab_4(char file[], Configuration conf, const bool DEBUG_MODE) {
         long double time_MTTQS = experiment_4(length, conf.max_instances, MTTQS, conf.threshold, DEBUG_MODE);
 
         srand(conf.seed);
-        long double time_RWS = experiment_4(length, conf.max_instances, RWS, conf.threshold, DEBUG_MODE);
+        long double time_HMTTQS = experiment_4(length, conf.max_instances, HMTTQS, conf.threshold, DEBUG_MODE);
 
-        fprintf(fp, "%ld,%Lf,%Lf,%Lf\n", length, time_TQS, time_MTTQS, time_RWS); // write to file
+        fprintf(fp, "%ld,%Lf,%Lf,%Lf\n", length, time_TQS, time_MTTQS, time_HMTTQS); // write to file
 
         ++conf.seed;
     }
