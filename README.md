@@ -91,7 +91,7 @@ I tried to keep the algorithms as close as possible to those shown on the book _
 
 _\*: Unfortunately there's a tiny warning due to my use of `rand()` in the `gen_rand_array()` function. Basically, the IDE is saying that it has limited randomness, which is fine and totally expected. Please ignore._
 
-_°: The warnings about recursive calls can be ignored too, they're necessary to make some algorithm work properly._
+_°: The warnings about recursive calls can be ignored too, they're necessary to make some algorithms work properly._
 
 ## Laboratories
 
