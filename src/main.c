@@ -57,9 +57,9 @@ int main(int argc, char *argv[]) {
     Configuration lab4_conf;
     lab4_conf.min_length = 0; // minimum length of the arrays
     lab4_conf.max_length = 100000; // maximum length of the arrays
-    lab4_conf.max_instances = 1; // how many times to repeat the same test
+    lab4_conf.max_instances = 100; // how many times to repeat the same test
     lab4_conf.step = 1000; // the arrays will grow this much at each test
-    lab4_conf.threshold = 10000; // threshold after which the sorting algorithm changes
+    lab4_conf.threshold = 199; // threshold after which the sorting algorithm changes
     lab4_conf.seed = 10; // srand()'s starting seed
 
     /* Final experiment configurations */

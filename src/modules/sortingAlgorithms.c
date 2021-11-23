@@ -322,10 +322,10 @@ void MedianOfThreeTailQuickSort(int array[], ssize_t l, ssize_t r) {
 // with relatively short arrays.
 void HybridTailMedianOfThreeQuickSort(int array[], ssize_t l, ssize_t r, const ssize_t THRESHOLD) {
     if (r - l + 1 <= THRESHOLD) {
-        AdaptedInsertionSort(array, l, r);
+        AdaptedInsertionSort(array, l, r + 1);
     } else {
         while (l < r) {
-            ssize_t c = MedianOfThreePartition(array, l, r - 1);
+            ssize_t c = MedianOfThreePartition(array, l, r);
 
             MedianOfThreeTailQuickSort(array, l, c - 1);
 
