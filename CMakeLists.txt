@@ -9,3 +9,7 @@ add_executable(sorting_algorithms src/main.c src/modules/utils.c src/headers/uti
 # Currently it is enabled only for debug builds.
 # Why? It is mandatory to ensure that the executables are free from bugs and Undefined Behaviors
 set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS} -fsanitize=address -fsanitize=undefined -fsanitize=leak -g")
+
+set(CMAKE_C_FLAGS_RELEASE "-O3")
+
+set(CMAKE_C_FLAGS "-Wall -Wextra -pedantic")
