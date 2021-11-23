@@ -28,7 +28,7 @@ void lab_2B(char file[], Configuration conf, bool DEBUG_MODE);
 // Lab. 3 - Quick Sort, Median of Three Quick Sort
 void lab_3(char file[], Configuration conf, bool DEBUG_MODE);
 
-// Lab. 4 - Tail Recursive Quick Sort, Median of Three Tail Quick Sort, Real World Sort
+// Lab. 4 - Tail Recursive Quick Sort, Median of Three Tail Quick Sort, Hybrid Tail Recursive Median of Three Quick Sort
 void lab_4(char file[], Configuration conf, bool DEBUG_MODE);
 
 // Final experiment (it runs all tests)

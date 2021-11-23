@@ -40,7 +40,7 @@ void HeapSort(int array[], ssize_t length);
 // MTTQS - Median of Three Tail Quick Sort
 void MedianOfThreeTailQuickSort(int array[], ssize_t l, ssize_t r);
 
-// RWS - Real World Sort
+// RWS - Hybrid Tail Recursive Median of Three Quick Sort
 void HybridTailMedianOfThreeQuickSort(int array[], ssize_t l, ssize_t r, ssize_t THRESHOLD);
 
 #endif //SORTING_ALGORITHMS_SORTINGALGORITHMS_H

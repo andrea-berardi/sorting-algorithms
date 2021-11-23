@@ -89,7 +89,8 @@ int main(int argc, char *argv[]) {
     } else if (strcmp(argv[1], "5") == 0) {
         /* Final Experiment that runs all algorithms */
         // Insertion Sort, Merge Sort, Hybrid Sort, Quick Sort, Median of Three Quick Sort,
-        // Tail Recursive Quick Sort, Heap Sort, Median of Three Tail Quick Sort, Real World Sort
+        // Tail Recursive Quick Sort, Heap Sort, Median of Three Tail Quick Sort,
+        // Hybrid Tail Recursive Median of Three Quick Sort
         lab_tot("../results/total/total.csv", final_exp_conf, DEBUG_MODE);
     } else {
         fprintf(stderr, "Invalid argument supplied: `%s`\n", argv[1]);

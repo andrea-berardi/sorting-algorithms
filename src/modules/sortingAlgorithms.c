@@ -315,7 +315,7 @@ void MedianOfThreeTailQuickSort(int array[], ssize_t l, ssize_t r) {
     }
 }
 
-/* Hybrid Tail Recursive Median of Three Quick Sort (Median Of Three Tail Quick Sort, Heap Sort) */
+/* Hybrid Tail Recursive Median of Three Quick Sort (Median Of Three Tail Quick Sort, Insertion Sort) */
 // This made-up algorithm uses a particular version of Quick Sort for
 // arrays longer than a given value, and uses Insertion Sort for arrays
 // shorter than that, to take advantage of Heap Sort's good performance
