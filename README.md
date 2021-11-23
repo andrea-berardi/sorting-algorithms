@@ -17,7 +17,7 @@ Here's what you'll find on this document:
   - [Lab. 4](#lab-4)
   - [Final experiment](#final-experiment)
 
-## Algorithms currently implemented:
+## Algorithms currently implemented
 
 - Insertion Sort
 - Merge Sort
