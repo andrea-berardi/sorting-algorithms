@@ -176,7 +176,7 @@ long double experiment_2B(ssize_t length, size_t max_instances, Algorithm algori
 
             case RWS: {
                 t_start = clock(); // starting processor time stopwatch
-                RealWorldSort(array, length - 1, THRESHOLD); // sorting the array
+                HybridTailMedianOfThreeQuickSort(array, length - 1, THRESHOLD); // sorting the array
                 t_end = clock();
 
                 break;

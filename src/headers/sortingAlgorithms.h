@@ -41,7 +41,7 @@ void HeapSort(int array[], ssize_t length);
 void MedianOfThreeTailQuickSort(int array[], ssize_t l, ssize_t r);
 
 // RWS - Real World Sort
-void RealWorldSort(int array[], ssize_t length, ssize_t THRESHOLD);
+void HybridTailMedianOfThreeQuickSort(int array[], ssize_t l, ssize_t r, ssize_t THRESHOLD);
 
 #endif //SORTING_ALGORITHMS_SORTINGALGORITHMS_H
 

@@ -91,7 +91,7 @@ long double experiment_tot(ssize_t length, size_t max_instances, Algorithm algor
 
             case RWS: {
                 t_start = clock(); // starting processor time "stopwatch"
-                RealWorldSort(array, length - 1, THRESHOLD); // sorting the array
+                HybridTailMedianOfThreeQuickSort(array, length - 1, THRESHOLD); // sorting the array
                 t_end = clock(); // stopping the processor time "stopwatch"
 
                 break;

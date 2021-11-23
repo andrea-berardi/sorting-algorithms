@@ -183,19 +183,7 @@ ssize_t MedianOfThreePartition(int array[], ssize_t l, ssize_t r) {
     ssize_t s = MedianOfThree(array, l, r, (l + r) / 2);
     swap(&array[s], &array[r]);
 
-    int x = array[r];
-    ssize_t i = l - 1;
-
-    for (ssize_t j = l; j < r; ++j) {
-        if (array[j] <= x) {
-            ++i;
-            swap(&array[i], &array[j]);
-        }
-    }
-
-    swap(&array[i + 1], &array[r]);
-
-    return i + 1;
+    return Partition(array, l, r);
 }
 
 /* Median of Three Quick Sort (usage MedianOfThreeQuickSort(array, left, right - 1)) */
@@ -327,16 +315,19 @@ void MedianOfThreeTailQuickSort(int array[], ssize_t l, ssize_t r) {
     }
 }
 
-/* Real World Sort (Median Of Three Tail Quick Sort, Heap Sort) */
+/* Hybrid Tail Recursive Median of Three Quick Sort (Median Of Three Tail Quick Sort, Heap Sort) */
 // This made-up algorithm uses a particular version of Quick Sort for
 // arrays longer than a given value, and uses Heap Sort for arrays
 // shorter than that, to take advantage of Heap Sort's good performance
 // with relatively short arrays.
-void RealWorldSort(int array[], ssize_t length, const ssize_t THRESHOLD) {
-    if (length > THRESHOLD) {
-        MedianOfThreeTailQuickSort(array, 0, length);
+void HybridTailMedianOfThreeQuickSort(int array[], ssize_t l, ssize_t r, const ssize_t THRESHOLD) {
+    if (r - l + 1 <= THRESHOLD) {
+        AdaptedInsertionSort(array, l, r);
     } else {
-        // this would actually run faster with Insertion Sort, on my machine
-        HeapSort(array, length + 1);
+        while (l < r) {
+            ssize_t c = MedianOfThreePartition(array, l, r);
+
+
+        }
     }
 }
