@@ -1,4 +1,4 @@
-Dimension (n),Insertion Sort,Merge Sort,Hybrid Sort,Quick Sort,Median of Three Quick Sort,Tail Recursive Quick Sort,Heap Sort,Median of Three Tail Quick Sort,Tail Recursive Quick Sort, Median of Three Tail Quick Sort,Hybrid Tail Recursive Median of Three Quick Sort
+Dimension (n),Insertion Sort,Merge Sort,Hybrid Sort,Quick Sort,Median of Three Quick Sort,Tail Recursive Quick Sort,Heap Sort,Median of Three Tail Quick Sort,Hybrid Tail Recursive Median of Three Quick Sort
 0,0.600000,0.200000,0.400000,0.200000,0.200000,0.400000,0.300000,0.400000,0.400000
 1000,367.700000,104.800000,60.400000,60.800000,61.800000,58.600000,82.300000,59.900000,59.100000
 2000,1263.700000,190.600000,117.300000,118.700000,119.600000,119.200000,165.100000,118.100000,119.400000
