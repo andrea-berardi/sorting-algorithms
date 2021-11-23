@@ -66,7 +66,7 @@ int main(int argc, char *argv[]) {
     Configuration final_exp_conf;
     final_exp_conf.min_length = 0; // minimum length of the arrays
     final_exp_conf.max_length = 100000; // maximum length of the arrays
-    final_exp_conf.max_instances = 1; // how many times to repeat the same test
+    final_exp_conf.max_instances = 10; // how many times to repeat the same test
     final_exp_conf.step = 1000; // the arrays will grow this much at each test
     final_exp_conf.threshold = 199; // threshold after which the sorting algorithm changes
     final_exp_conf.seed = 1; // srand()'s starting seed
