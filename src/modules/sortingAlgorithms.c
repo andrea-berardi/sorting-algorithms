@@ -327,7 +327,9 @@ void HybridTailMedianOfThreeQuickSort(int array[], ssize_t l, ssize_t r, const s
         while (l < r) {
             ssize_t c = MedianOfThreePartition(array, l, r);
 
+            MedianOfThreeTailQuickSort(array, l, c - 1);
 
+            l = c + 1;
         }
     }
 }
