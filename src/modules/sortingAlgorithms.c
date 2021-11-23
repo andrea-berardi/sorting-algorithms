@@ -151,10 +151,10 @@ ssize_t Partition(int array[], ssize_t l, ssize_t r) {
 // Quick Sort is a "divide-and-conquer" algorithm.
 void QuickSort(int array[], ssize_t l, ssize_t r) {
     if (l < r) {
-        ssize_t q = Partition(array, l, r);
+        ssize_t c = Partition(array, l, r);
 
-        QuickSort(array, l, q - 1);
-        QuickSort(array, q + 1, r);
+        QuickSort(array, l, c - 1);
+        QuickSort(array, c + 1, r);
     }
 }
 
@@ -192,10 +192,10 @@ ssize_t MedianOfThreePartition(int array[], ssize_t l, ssize_t r) {
 // are no practical differences from the standard Quick Sort.
 void MedianOfThreeQuickSort(int array[], ssize_t l, ssize_t r) {
     if (l < r) {
-        ssize_t q = MedianOfThreePartition(array, l, r);
+        ssize_t c = MedianOfThreePartition(array, l, r);
 
-        MedianOfThreeQuickSort(array, l, q - 1);
-        MedianOfThreeQuickSort(array, q + 1, r);
+        MedianOfThreeQuickSort(array, l, c - 1);
+        MedianOfThreeQuickSort(array, c + 1, r);
     }
 }
 
@@ -210,11 +210,11 @@ void MedianOfThreeQuickSort(int array[], ssize_t l, ssize_t r) {
 // performance improvements.
 void TailQuickSort(int array[], ssize_t l, ssize_t r) {
     while (l < r) {
-        ssize_t q = Partition(array, l, r);
+        ssize_t c = Partition(array, l, r);
 
-        TailQuickSort(array, l, q - 1);
+        TailQuickSort(array, l, c - 1);
 
-        l = q + 1;
+        l = c + 1;
     }
 }
 
@@ -307,17 +307,17 @@ void HeapSort(int array[], ssize_t length) {
 // order to get both better balances partitions and better optimized code.
 void MedianOfThreeTailQuickSort(int array[], ssize_t l, ssize_t r) {
     while (l < r) {
-        ssize_t q = MedianOfThreePartition(array, l, r);
+        ssize_t c = MedianOfThreePartition(array, l, r);
 
-        MedianOfThreeTailQuickSort(array, l, q - 1);
+        MedianOfThreeTailQuickSort(array, l, c - 1);
 
-        l = q + 1;
+        l = c + 1;
     }
 }
 
 /* Hybrid Tail Recursive Median of Three Quick Sort (Median Of Three Tail Quick Sort, Heap Sort) */
 // This made-up algorithm uses a particular version of Quick Sort for
-// arrays longer than a given value, and uses Heap Sort for arrays
+// arrays longer than a given value, and uses Insertion Sort for arrays
 // shorter than that, to take advantage of Heap Sort's good performance
 // with relatively short arrays.
 void HybridTailMedianOfThreeQuickSort(int array[], ssize_t l, ssize_t r, const ssize_t THRESHOLD) {
