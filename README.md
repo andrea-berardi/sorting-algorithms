@@ -27,7 +27,7 @@ Here's what you'll find on this document:
 - Tail Recursive Quick Sort
 - Heap Sort
 - Median of Three Tail Quick Sort
-- Real World Sort _(Median of Three Tail Quick Sort + Heap Sort)_
+- Hybrid Tail Recursive Median of Three Quick Sort _(Median of Three Tail Quick Sort + Insertion Sort)_
 
 ## Project Structure
 
@@ -125,12 +125,12 @@ Quick Sort, Median of Three Quick Sort
 
 ### Lab. 4
 
-Tail Recursive Quick Sort, Median of Three Tail Quick Sort, Real World Sort
+Tail Recursive Quick Sort, Median of Three Tail Quick Sort, Hybrid Tail Recursive Median of Three Quick Sort
 
-![Tail Recursive Quick Sort, Median of Three Tail Quick Sort, Real World Sort](https://github.com/andrea-berardi/sorting-algorithms/blob/main/results/lab_4/lab_4.png?raw=true)
+![Tail Recursive Quick Sort, Median of Three Tail Quick Sort, Hybrid Tail Recursive Median of Three Quick Sort](https://github.com/andrea-berardi/sorting-algorithms/blob/main/results/lab_4/lab_4.png?raw=true)
 
 ### Final experiment
 
-Insertion Sort, Merge Sort, Hybrid Sort, Quick Sort, Median of Three Quick Sort, Tail Recursive Quick Sort, Heap Sort, Median of Three Tail Quick Sort, Real World Sort
+Insertion Sort, Merge Sort, Hybrid Sort, Quick Sort, Median of Three Quick Sort, Tail Recursive Quick Sort, Heap Sort, Median of Three Tail Quick Sort, Hybrid Tail Recursive Median of Three Quick Sort
 
-![Insertion Sort, Merge Sort, Hybrid Sort, Quick Sort, Median of Three Quick Sort, Tail Recursive Quick Sort, Heap Sort, Median of Three Tail Quick Sort, Real World Sort](https://github.com/andrea-berardi/sorting-algorithms/blob/main/results/total/total.png?raw=true)
+![Insertion Sort, Merge Sort, Hybrid Sort, Quick Sort, Median of Three Quick Sort, Tail Recursive Quick Sort, Heap Sort, Median of Three Tail Quick Sort, Hybrid Tail Recursive Median of Three Quick Sort](https://github.com/andrea-berardi/sorting-algorithms/blob/main/results/total/total.png?raw=true)
