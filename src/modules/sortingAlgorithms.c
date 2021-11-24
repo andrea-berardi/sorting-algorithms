@@ -122,10 +122,10 @@ void HybridSort(int array[], ssize_t l, ssize_t r, const ssize_t THRESHOLD) {
 }
 
 /* Partition */
-// Partition selects a pivot that is typically the last element in the array (x = A[r]).
-// The algorithm maintains index i as it scans the array using another index j
-// such that the elements at lo through i-1 (inclusive) are less than the pivot, and the elements
-// at i through j (inclusive) are equal to or greater than the pivot.
+// Partition selects a pivot that is typically the last element in the array (`x = A[r]`).
+// The algorithm maintains an index `i` as it scans the array using another index `j`
+// such that the elements at `l` through `i-1` (inclusive) are smaller than the pivot, and the elements
+// at `i` through `j` (inclusive) are equal to or greater than the pivot.
 ssize_t Partition(int array[], ssize_t l, ssize_t r) {
     int x = array[r];
     ssize_t i = l - 1;
@@ -283,9 +283,9 @@ void BuildMaxHeap(int array[], ssize_t length) {
 
 /* HeapSort */
 // This procedure starts by using BuildMaxHeap() to... build a max-heap
-// on the input array. The maximum element of the array is sored at the root
-// A[0] and can be places in its correct position. by swapping it with A[i].
-// Unfortunately, even if the children of the root is still a max-heap, the new
+// on the input array. The maximum element of the array is stored at the root
+// A[0] and can be placed in its correct position by swapping it with A[i].
+// Unfortunately, even if the children of the root are still a max-heap, the new
 // root might not maintain that property. In order to restore this property
 // we simply need to call MaxHeapify().
 void HeapSort(int array[], ssize_t length) {
@@ -304,7 +304,7 @@ void HeapSort(int array[], ssize_t length) {
 /* Median of Three Tail Quick Sort */
 // This variation of Quick Sort implements two different optimizations:
 // the median of three partition and the tail-recursive call to itself, in
-// order to get both better balances partitions and better optimized code.
+// order to get both better balanced partitions and better optimized code.
 void MedianOfThreeTailQuickSort(int array[], ssize_t l, ssize_t r) {
     while (l < r) {
         ssize_t c = MedianOfThreePartition(array, l, r);
