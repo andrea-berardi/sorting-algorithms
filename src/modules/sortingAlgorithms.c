@@ -206,7 +206,7 @@ void MedianOfThreeQuickSort(int array[], ssize_t l, ssize_t r) {
 // a recursive call. This prevents stack's overflows and gives better
 // performances. Unfortunately, at this point, the compilers are so smart
 // that this does not seem to be necessary, as this basically produces (almost)
-//  the same machine-code as the recursive version and there aren't big
+// the same machine-code as the recursive version and there aren't big
 // performance improvements.
 void TailQuickSort(int array[], ssize_t l, ssize_t r) {
     while (l < r) {

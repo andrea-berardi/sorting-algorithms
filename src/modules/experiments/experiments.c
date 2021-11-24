@@ -132,7 +132,7 @@ void lab_tot(char file[], Configuration conf, const bool DEBUG_MODE) {
     }
 
     fprintf(fp,
-            "Dimension (n),Insertion Sort,Merge Sort,Hybrid Sort,Quick Sort,Median of Three Quick Sort,Tail Recursive Quick Sort,Heap Sort,Median of Three Tail Quick Sort,Tail Recursive Quick Sort, Median of Three Tail Quick Sort,Hybrid Tail Recursive Median of Three Quick Sort\n");
+            "Dimension (n),Insertion Sort,Merge Sort,Hybrid Sort,Quick Sort,Median of Three Quick Sort,Tail Recursive Quick Sort,Heap Sort,Median of Three Tail Quick Sort,Hybrid Tail Recursive Median of Three Quick Sort\n");
     for (ssize_t length = conf.min_length; length <= conf.max_length; length += conf.step) {
         srand(conf.seed);
         long double time_IS = experiment_tot(length, conf.max_instances, IS, conf.threshold, DEBUG_MODE);
