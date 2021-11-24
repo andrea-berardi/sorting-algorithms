@@ -133,6 +133,6 @@ Tail Recursive Quick Sort, Median of Three Tail Quick Sort, Hybrid Tail Recursiv
 
 ### Final experiment
 
-Insertion Sort, Merge Sort, Hybrid Sort, Quick Sort, Median of Three Quick Sort, Tail Recursive Quick Sort, Heap Sort, Median of Three Tail Quick Sort, Hybrid Tail Recursive Median of Three Quick Sort
+(Insertion Sort), Merge Sort, Hybrid Sort, Quick Sort, Median of Three Quick Sort, Tail Recursive Quick Sort, Heap Sort, Median of Three Tail Quick Sort, Hybrid Tail Recursive Median of Three Quick Sort
 
 ![Insertion Sort, Merge Sort, Hybrid Sort, Quick Sort, Median of Three Quick Sort, Tail Recursive Quick Sort, Heap Sort, Median of Three Tail Quick Sort, Hybrid Tail Recursive Median of Three Quick Sort](https://github.com/andrea-berardi/sorting-algorithms/blob/main/results/total/total.png?raw=true)
